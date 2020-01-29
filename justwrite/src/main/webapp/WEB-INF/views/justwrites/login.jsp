@@ -25,9 +25,12 @@
 
             <div id="user_id" style="margin: 10px;">
                 <input type="text" style="width: 50%; height: 50px; padding: 3px; cursor: pointer; font-size: 30px;" placeholder="아이디">
+            	<button id="idcheck">아이디 확인</button>
             </div>
             <div id="user_pw" style="margin: 10px;">
                 <input type="password" style="width: 50%; height: 50px; padding: 3px; cursor: pointer; font-size: 30px;" placeholder="비밀번호">
+				<input type="password" style="width: 50%; height: 50px; padding: 3px; cursor: pointer; font-size: 30px;" placeholder="다시 입력해주세요">
+            	<button id="pwcheck">비밀번호 확인</button>
             </div>
             <button type="submit" style="margin-top: 2%;">로그인</button>
             <button type="submit" id="registUser" style="margin-top: 2%;">회원가입</button>
@@ -74,6 +77,17 @@ $(document).ready(function(){
         $('.add_bg').show();
 
     })
+    
+    
+    function check(){
+    	
+    	#('idcheck').click(function(){
+    		
+    		
+    	});
+    	
+    	
+    }
 
 })
 
