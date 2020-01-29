@@ -1,0 +1,318 @@
+    body,html{
+        height: 100%;
+        width: 100%;
+    margin:0;
+    padding:0;
+
+}
+    .menu{
+        position: relative;
+        display: inline-block;
+        background-color: #858282;
+        width: 19.17%;
+        height: 100%;
+        padding: 5px;
+        
+
+    }
+    .menu1{
+        position: absolute;
+        display: none;
+        background-color: #858282;
+        width: 20%;
+        height: 1200px;
+        padding: 5px;
+        
+
+    }
+
+    .user_box{
+        background-color: #2E3343;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 15px bold;
+        color: white;
+        text-align: center;
+        border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+    }
+    .book_status{
+        background-color: #2E3343;
+        width: 100%;
+        color: white;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+    .menu_adder{
+        background-color: #2E3343;
+        margin: auto;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: inline-block;
+        cursor: pointer;
+    }
+    #add_book img{
+        width:7%;
+        display: inline-block;
+  
+    }
+    .arrow img{
+        width:7%;
+        display: inline-block;
+  
+    }
+
+    .img_box{
+        position: relative;
+        color: white; 
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: inline-block;
+        font-size: 18px;
+    }
+    .menu_bar:hover{
+        background-color: rgb(121, 128, 151);
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+    .img_box:hover {
+
+        background-color: rgb(121, 128, 151);
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+    .t_box{
+        position: relative;
+        color: white; 
+        width: 15%;
+        height: 100%;
+        display: inline-block;
+        left: 30%;
+        margin-bottom: 3px;
+    }
+    .menu_bar{
+        background-color: #2E3343;
+       margin: auto;
+       padding-left: 0px;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+     
+        cursor: pointer;
+        color: white;
+        text-align: center;
+
+    }
+
+    .side_menu{
+        background-color: #2E3343;
+        cursor: pointer;
+        color: white;
+        text-align: center;
+        font-size: 13px;
+
+    }
+    .side_menu:hover {
+        background-color: rgb(121, 128, 151);
+
+        
+    }
+    .add_bg{
+        position: absolute;
+        display: none;
+        z-index: 5;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(71, 71, 71, 0.5);
+   
+    }
+    .add_main{
+        position: fixed;
+        width: 70%;
+        height: 50%;
+        background-color: white;
+        text-align: center;
+        left:16%;
+        top: 15%;
+    }
+
+    .b_title, .b_genre{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+
+
+    }
+    
+    /* 헤더 부분 */
+    .container{
+        position: relative;
+        width:80%;
+        height:10%;
+        background-color: #8a8888;
+        float: right;
+    }
+    .headerMenu{
+        
+        width: 15%;
+        height: 100%;
+        text-align: center;
+        background-color: #8a8888;
+        float: left;
+        
+    }
+      
+
+    .headerMenu:hover{
+        background-color: #afaeae;
+    }
+
+  /* 헤더 부분 끝*/
+
+  
+ /* 컨텐츠 영역 */
+ .content_area{
+    width: 80%;
+    height: 92%;
+
+    float: right;
+}
+
+.book_list{
+
+    width: 90%;
+    margin-top: 10%;
+    margin: auto;
+    height: 100%;
+    
+
+}
+.book1{
+    position: relative;
+    width: 100%;
+    height: 25%;
+    margin-top: 3%;
+    padding: 15px;
+}
+.book_img{
+    position: relative;
+    display: inline-block;
+    width: 13%;
+    height: 100%; 
+    text-align: center;
+}
+
+.title_area{
+    width: 85%;
+    height: 100%;
+    display: inline-block;
+    float: right;
+    margin-left: 2%;
+}
+
+.title_line{
+    position: relative;
+    padding: 0;
+    display: block;
+    width: 86%;
+    height: 20%;
+    font-weight: bold;
+    
+}
+.book_line{
+    
+    padding: 0;
+    display: block;
+    width: 86%;
+    height: 20%;
+    
+    
+} 
+
+.chap{
+    width: 100%;
+    height: 100%;
+  
+}
+
+.chap_bar{
+    margin-top: 2%;
+    width: 100%;
+    height: 20%;
+    background-color: #eeebeb;
+    text-align: center;
+    border-top: rgb(92, 92, 92) solid 1px;
+}
+.chap_list{
+    margin-top: 2%;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+  
+}
+.chap_name{
+    display: inline-block;
+    width: 40%;
+    padding: 3px;
+    
+}
+.chap_no{
+    width: 12%;
+    padding: 3px;
+    display: inline-block;
+
+}
+.chap_size{
+    display: inline-block;
+    width: 12%;
+    padding: 3px;
+}
+.chap_letterNum{
+    display: inline-block;
+    width: 12%;
+    padding: 3px;
+}
+.chap_date{   
+    display: inline-block;
+    width: 12%;
+    padding: 3px;
+}
+
+.book_img img{
+    width: 100%;
+    height: 100%;
+
+
+}
+
+/* 컨텐츠 영역 끝*/
+
+
+
+     /* 공통영역 */
+    ul{
+        display: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    li{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    div{
+        -ms-user-select: none; 
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+         /* 공통영역 끝*/
+
+    

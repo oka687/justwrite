@@ -1,0 +1,68 @@
+.content_area{
+    width: 80%;
+    height: 92%;
+    float: right;
+   
+
+}
+
+.outline_box{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+   
+    text-align: center;
+
+}
+
+.fix_title ,.title_box{
+    font-weight: bold;
+    font-size: 20px;
+}
+.outline_name{
+    text-align: left;
+    width: 100%;
+    height: 10%;
+}
+
+#outline_key{
+    width: 50%;
+    height: 80%;
+    font-size: 20px;
+}
+
+
+.chap_num{
+    text-align: left;
+    width: 100%;
+    height: 10%;
+}
+
+#chap_key{
+    width: 20%;
+    height: 80%;
+    font-size: 15px;
+}
+
+
+.outline_ex{
+    text-align: left;
+    
+    width: 100%;
+    height: 50%;
+
+}
+
+#outline_ex{
+
+    width: 100%;
+    height: 90%;
+    font-size: 15px;
+
+}
+
+
+/* 하이퍼링크 파란색 없애는 기능 */
+a:link { color: red; text-decoration: none;}
+a:visited { color: white; text-decoration: none;}
+a:hover { color: white; text-decoration: none;}

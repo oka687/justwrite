@@ -1,0 +1,90 @@
+.content_area{
+    width: 80%;
+    height: 92%;
+    float: right;
+  
+
+}
+
+.outline_area{
+    position: relative;
+    top: 10%;
+    width: 80%;
+    margin: auto;
+    height: 90%;
+}
+.outline_bar{
+    width: 100%;
+    height: 5%;
+    background-color: #eeebeb;
+    border-top: rgb(92, 92, 92) solid 1px;
+}
+
+.outline_content{
+    width: 100%;
+    height: 5%;
+    
+ 
+}
+
+.outline_content:hover{
+    background-color: #bebaba;
+    cursor: pointer;
+}
+
+
+.outline_adder{
+    width: 99.5%;
+    height: 100%;
+    padding: 2px;
+    text-align: center;
+}
+.outLineAdder_txt{
+    
+    position: relative;
+    font-weight: bold;
+}
+.outlineAddBar{
+    width: 100%;
+    height: 5%;
+}
+
+
+.outlineAddBar:hover{
+    background-color: #bebaba;
+    cursor: pointer;
+}
+
+.out_title{
+    display: inline-block;
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    padding: 2px;
+}
+.out_num{
+    display: inline-block;
+    width: 29%;
+    height: 100%;
+    text-align: center;
+    padding: 2px;
+}
+.out_date{
+    display: inline-block;
+    width: 29%;
+    height: 100%;
+    text-align: center;
+    padding: 2px;
+}
+
+
+
+
+
+
+/* 하이퍼링크 파란색 없애는 기능 */
+a:link { color: red; text-decoration: none;}
+a:visited { color: white; text-decoration: none;}
+a:hover { color: white; text-decoration: none;}
+
+

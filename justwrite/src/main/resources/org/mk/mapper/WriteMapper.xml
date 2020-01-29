@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mk.mapper.WriteMapper">
+
+<select id="readUser" resultType="org.mk.domain.UserInfo">
+		select * from userinfo where id = #{id}
+</select>
+
+<insert id="userRegist" statementType="CALLABLE">
+	call user_register(#{id},#{pw},#{nickName},#{eMail})
+</insert>
+
+
+</mapper>
