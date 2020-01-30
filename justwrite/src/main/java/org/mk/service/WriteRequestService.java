@@ -5,6 +5,6 @@ import org.mk.domain.UserInfo;
 public interface WriteRequestService {
 	
 	
-	public UserInfo idCheck(UserInfo info);
+	public UserInfo idCheck(String id);
 	
 }

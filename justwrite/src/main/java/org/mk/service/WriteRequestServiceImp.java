@@ -14,12 +14,12 @@ public class WriteRequestServiceImp implements WriteRequestService {
 	private RequestMapper mapper;
 	
 	@Override
-	public UserInfo idCheck(UserInfo info) {
+	public UserInfo idCheck(String id) {
 		
-		
-		
-		
-		return null;
+			
+			System.out.println("서비스에 id값들어옴: "+id);
+			
+		return mapper.idCheck(id);
 	}
 
 }

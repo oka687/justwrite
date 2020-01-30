@@ -6,7 +6,7 @@ public interface RequestMapper {
 	
 	
 
-	public UserInfo idCheck(UserInfo info);
+	public UserInfo idCheck(String id);
 	
 	
 }

@@ -5,7 +5,7 @@
 <mapper namespace="org.mk.mapper.RequestMapper">
 
 <select id="idCheck" resultType="org.mk.domain.UserInfo">
-	select id, nickName from userinfo = where id = #{id}
+	select id, nickName from userinfo where id = #{id}
 </select>
 
 </mapper>

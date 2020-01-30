@@ -42,16 +42,23 @@ public class WriteController {
 		
 	}
 	
+	@GetMapping("/firstPage")
+	public void firstPage() {
+		
+	}
+	
+	
 	@PostMapping("/regist")
 	  public String registUser(UserInfo info, RedirectAttributes rttr) {
+			
+				System.out.println(info);
+				 service.userRegist(info);
+				 
+				 rttr.addFlashAttribute("result", info.getId());
+				 return "redirect:/justwrites/login";
 				
-	
-		
-		
-		 service.userRegist(info);
-		 
-		 rttr.addFlashAttribute("result", info.getId());
-		 return "redirect:/justwrites/login";
+
+
 	  }
 	
 
