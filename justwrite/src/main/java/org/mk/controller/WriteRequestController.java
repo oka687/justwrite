@@ -1,6 +1,8 @@
 package org.mk.controller;
+import org.mk.domain.UserInfo;
 import org.mk.service.WriteRequestService;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,21 +19,31 @@ public class WriteRequestController {
 	
 	private WriteRequestService service;
 	
-	@PostMapping(value = "/idcheck",produces = { MediaType.APPLICATION_XML_VALUE,
-			MediaType.APPLICATION_JSON_UTF8_VALUE })
+	@PostMapping(value = "/idcheck", produces = "application/text; charset=UTF-8")
 	  public String readUser(@RequestBody String id) {
-		System.out.println("값");
+
 		System.out.println(id);
+	
+		String[] splitid = id.split("=");
 		
+		String check = splitid[1];
+	
+			
 		
 			System.out.println("<-----컨트롤러------>");
-		String check = service.idCheck(id).getId();
+		UserInfo recheck = service.idCheck(check);
 
-		if(check == null) {
-			return "아이디 있음";
+		if(recheck == null) {
+			System.out.println("success");
+			
+			return "success";
 		}else {
-			return "아이이 없음";
+			System.out.println("fail");
+			return "fail";
 		}
+		
+		
+		
 	
 	}
 

@@ -82,16 +82,25 @@ $(document).ready(function(){
     
     $('#idcheck').click(function(){
 		var userid = $('#userid').val();
-		
+		console.log(userid);
 		$.ajax({
 		    url:'/request/idcheck',
-		    type:'GET',
-		    data:{'id':'userid'}, //보낼 데이터
+		    type:'POST',
+		    
+		    data:{"id" : userid}, //보낼 데이터
 		    success: function(data) {
-		       alert("사용할 수 있는 아이디입니다.");
+		    	console.log(data);
+		    	if(data == "success"){
+		    	 	alert("사용할 수 있습니다.")
+		    	}
+		    	
+		    	if(data == "fail"){
+		    		alert("이미 사용 중인 아이디입니다. 다시 입력해주세요.")
+		    	}
 		    },
 		    error: function(err) {
-		    	alert("사용할 수 없는 아이디입니다.");
+		    	console.log(err);
+		    	
 		    }
 		});
 
