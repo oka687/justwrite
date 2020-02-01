@@ -45,9 +45,10 @@
                			<button id="idcheck">아이디 확인</button>
                 </div>
                 <div class="b_genre">
-                    <input type="password" name="pw" style="width: 40%; padding: 2px; margin: 13px;" placeholder="비밀번호를 입력해주세요.">
-                	<input type="password" id="pwcheck" style="width: 40%; padding: 2px; margin: 13px;" placeholder="다시 입력해주세요">
-            	<!-- <button id="pwcheck">비밀번호 확인</button> -->
+                    <input type="password" class="pwcheck" id="pw" name="pw" style="width: 40%; padding: 2px; " placeholder="비밀번호를 입력해주세요.">
+                    <br>
+                	<input type="password" class="pwcheck" id="pcheck" style="width: 40%; padding: 2px; " placeholder="비밀번호 재확인">
+            		<p class="palert"></p>
                 </div>
                 <div class="b_genre">
                     <input type="text" name="nickName" style="width: 40%; padding: 2px; margin: 13px;" placeholder="닉네임을 입력해주세요.">
@@ -75,18 +76,21 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+	
+	
     $('#registUser').click(function(){
         $('.add_bg').show();
 		
     })
     
+    
+    	/* 아이디체크 시작 */
     $('#idcheck').click(function(){
 		var userid = $('#userid').val();
-		console.log(userid);
+		
 		$.ajax({
 		    url:'/request/idcheck',
 		    type:'POST',
-		    
 		    data:{"id" : userid}, //보낼 데이터
 		    success: function(data) {
 		    	console.log(data);
@@ -107,6 +111,30 @@ $(document).ready(function(){
 			
 		return false; //이벤트 전파를 막기 위한 코드. e.preventDefault(); 대체 가능
     })
+    /* 아이디체크 끝 */
+    
+    
+   (function(){
+   		$('.pwcheck').keyup(function(){
+   			
+   			
+   			
+   	    	var pw = $("#pw").val();
+   	    	var pcheck = $("#pcheck").val();
+   	    	  		
+   	   	 if(pw.length == 0 && pcheck.length == 0){
+	    		$(".palert").empty();
+	    	}else if(pw == pcheck){
+   	    		$(".palert").text("비밀번호가 일치합니다.").css("color","blue");
+   	    	}else{
+   	    		$(".palert").text("비밀번호가 일치하지 않습니다").css("color","red");
+   	    	}
+   	    	
+   			
+   		})
+		return false;
+    }());
+    
     
 
 })
