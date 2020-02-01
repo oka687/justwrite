@@ -3,7 +3,7 @@ package org.mk.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mk.domain.UserInfo;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
