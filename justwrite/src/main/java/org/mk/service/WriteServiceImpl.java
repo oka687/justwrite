@@ -14,11 +14,13 @@ public class WriteServiceImpl implements WriteService {
 	
     @Setter(onMethod = @__({ @Autowired }))
 	private WriteMapper mapper;
-	
+
 	
 	@Override
 	public void userRegist(UserInfo info) {
 		System.out.println("서비스 쪽 시작"+info);
+		
+		
 		mapper.userRegist(info);
 		System.out.println("서비스 쪽 매퍼 지나옴"+info);
 		

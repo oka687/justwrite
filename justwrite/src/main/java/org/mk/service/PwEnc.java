@@ -2,13 +2,20 @@ package org.mk.service;
 
 import java.security.MessageDigest;
 
+import org.springframework.stereotype.Service;
 
-public class pwEnc {
+import lombok.AllArgsConstructor;
 
-	public static void main(String[] args) {
-
-		String base = "password123";
-
+@Service
+@AllArgsConstructor
+public class PwEnc {
+	
+   
+    
+	public String enc(String pwcode) {
+	
+		String base = pwcode;
+		System.out.println(base+"base입니다");
 		try{
 
 			MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -22,8 +29,9 @@ public class pwEnc {
 			}
 
 			//출력
-			System.out.println(hexString.toString());
-
+			//System.out.println(hexString.toString());
+			String hex = hexString.toString();
+			return hex;
 		} catch(Exception ex){
 			throw new RuntimeException(ex);
 		}

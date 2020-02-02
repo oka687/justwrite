@@ -2,6 +2,7 @@ package org.mk.controller;
 
 
 import org.mk.domain.UserInfo;
+import org.mk.service.PwEnc;
 import org.mk.service.WriteService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ public class WriteController {
 
 	
 	private WriteService service;
-	
+	private PwEnc enc;
 	
 	@GetMapping("/userSearch")
 	public void search(@RequestParam("id") String id, Model model) {
@@ -51,6 +52,14 @@ public class WriteController {
 	@PostMapping("/regist")
 	  public String registUser(UserInfo info, RedirectAttributes rttr) {
 			
+			String pwcode = info.getPw();
+				
+			String encode = enc.enc(pwcode);
+			System.out.println(encode);
+			
+				info.setPw(encode);
+			
+				System.out.println("<---문자열 변환----->");
 				System.out.println(info);
 				 service.userRegist(info);
 				 

@@ -78,6 +78,33 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+    
+	   (function idChecker(){
+		   event.stopPropagation();
+	   		$('.pwcheck').keyup(function(event){
+	   			
+	   	    	var pw = $("#pw").val();
+	   	    	var pcheck = $("#pcheck").val();
+	   	    	  		
+	   	   	 if(pw.length == 0 && pcheck.length == 0){
+		    		$(".palert").empty();
+		    	}else if(pw == pcheck){
+	   	    		$(".palert").text("비밀번호가 일치합니다.").css("color","blue");
+	   	    	}else{
+	   	    		$(".palert").text("비밀번호가 일치하지 않습니다").css("color","red");
+	   	    	}
+	   	    	
+	   			
+	   		})
+	   		
+	  
+	    }());
+	    
+	
+	
+	
+	
+	
 	
 	
     $('#registUser').click(function(){
@@ -88,6 +115,8 @@ $(document).ready(function(){
     
     	/* 아이디체크 시작 */
     $('#idcheck').click(function(){
+    	
+    	
 		var userid = $('#userid').val();
 		$('#userid').keyup(function(){
 	 		$('#idchecker').val("0");
@@ -120,30 +149,7 @@ $(document).ready(function(){
 		return false; //이벤트 전파를 막기 위한 코드. e.preventDefault(); 대체 가능
     })
     /* 아이디체크 끝 */
-    
-    
-   (function(e){
-   		$('.pwcheck').keyup(function(){
-   			
-   			
-   			
-   	    	var pw = $("#pw").val();
-   	    	var pcheck = $("#pcheck").val();
-   	    	  		
-   	   	 if(pw.length == 0 && pcheck.length == 0){
-	    		$(".palert").empty();
-	    	}else if(pw == pcheck){
-   	    		$(".palert").text("비밀번호가 일치합니다.").css("color","blue");
-   	    	}else{
-   	    		$(".palert").text("비밀번호가 일치하지 않습니다").css("color","red");
-   	    	}
-   	    	
-   			
-   		})
-   		e.preventDefault();
-		return false;
-    }());
-    
+   
     
 
 })
