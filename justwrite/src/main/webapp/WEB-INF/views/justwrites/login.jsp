@@ -42,13 +42,15 @@
                 <div class="b_title">
                     <span class="close_button" style="position: fixed; left: 84%; font-weight: bold; cursor: pointer;">X</span><br>
                         <input type="text" id = "userid" name="id" style="width: 40%; padding: 2px; margin: 13px;" placeholder="아이디를 입력해주세요.">
+						 <input type="hidden" id = "idchecker" style="width: 40%; padding: 2px; margin: 13px;" value="0">
                			<button id="idcheck">아이디 확인</button>
+						 <h3 class="idText" style="margin: 0;"></h3>
                 </div>
                 <div class="b_genre">
                     <input type="password" class="pwcheck" id="pw" name="pw" style="width: 40%; padding: 2px; " placeholder="비밀번호를 입력해주세요.">
                     <br>
                 	<input type="password" class="pwcheck" id="pcheck" style="width: 40%; padding: 2px; " placeholder="비밀번호 재확인">
-            		<p class="palert"></p>
+            		<h3 class="palert" style="margin: 0;"></h3>
                 </div>
                 <div class="b_genre">
                     <input type="text" name="nickName" style="width: 40%; padding: 2px; margin: 13px;" placeholder="닉네임을 입력해주세요.">
@@ -87,6 +89,10 @@ $(document).ready(function(){
     	/* 아이디체크 시작 */
     $('#idcheck').click(function(){
 		var userid = $('#userid').val();
+		$('#userid').keyup(function(){
+	 		$('#idchecker').val("0");
+	 		$('.idText').text("아이디를 확인해주세요.").css("color","red");
+	 	})
 		
 		$.ajax({
 		    url:'/request/idcheck',
@@ -96,6 +102,8 @@ $(document).ready(function(){
 		    	console.log(data);
 		    	if(data == "success"){
 		    	 	alert("사용할 수 있습니다.")
+		    	 	$('#idchecker').val("1");
+		    	 	$('.idText').text("사용할 수 있는 아이디입니다.").css("color","blue");
 		    	}
 		    	
 		    	if(data == "fail"){
@@ -114,7 +122,7 @@ $(document).ready(function(){
     /* 아이디체크 끝 */
     
     
-   (function(){
+   (function(e){
    		$('.pwcheck').keyup(function(){
    			
    			
@@ -132,6 +140,7 @@ $(document).ready(function(){
    	    	
    			
    		})
+   		e.preventDefault();
 		return false;
     }());
     
