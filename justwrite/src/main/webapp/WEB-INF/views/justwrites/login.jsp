@@ -35,7 +35,7 @@
             <button type="submit" id="registUser" style="margin-top: 2%;">회원가입</button>
         </div>
         
-	  <form role="form" action="/justwrites/regist" method="post"> 
+	  <form role="form" action="/justwrites/regist" method="post" onsubmit="return check()"> 
         <div class="add_bg">
       
             <div class="add_main">
@@ -50,13 +50,20 @@
                     <input type="password" class="pwcheck" id="pw" name="pw" style="width: 40%; padding: 2px; " placeholder="비밀번호를 입력해주세요.">
                     <br>
                 	<input type="password" class="pwcheck" id="pcheck" style="width: 40%; padding: 2px; " placeholder="비밀번호 재확인">
+            		 <input type="hidden" id = "pwchecker" style="width: 40%; padding: 2px; margin: 13px;" value="0">
             		<h3 class="palert" style="margin: 0;"></h3>
                 </div>
                 <div class="b_genre">
-                    <input type="text" name="nickName" style="width: 40%; padding: 2px; margin: 13px;" placeholder="닉네임을 입력해주세요.">
+                    <input type="text" id="nick" name="nickName" style="width: 40%; padding: 2px; margin: 13px;" placeholder="닉네임을 입력해주세요.">
+                	<button id="nickcheck">닉네임 확인</button>
+                	<br>
+                	 <h3 class="nickText" style="margin: 0;"></h3>
+                	 <input type="hidden" id = "nickchecker" style="width: 40%; padding: 2px; margin: 13px;" value="0">
                 </div>
                 <div class="b_genre">
-                    <input type="text" name="eMail" style="width: 40%; padding: 2px; margin: 13px;" placeholder="이메일을 입력해주세요.">
+                    <input type="text" id="eMailCheck" name="eMail" style="width: 40%; padding: 2px; margin: 13px;" placeholder="이메일을 입력해주세요.">
+                	<input type="hidden" id = "emailchecker" style="width: 40%; padding: 2px; margin: 13px;" value="0">
+                	  <h3 class="emailText" style="margin: 0;"></h3>
                 </div>
                     <button type="submit" style="margin-top: 2%;">가입</button>
             </div>
@@ -78,7 +85,9 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+	//check();
     
+	/* 비밀번호 체크 즉시실행함수 시작*/
 	   (function idChecker(){
 		   event.stopPropagation();
 	   		$('.pwcheck').keyup(function(event){
@@ -90,8 +99,10 @@ $(document).ready(function(){
 		    		$(".palert").empty();
 		    	}else if(pw == pcheck){
 	   	    		$(".palert").text("비밀번호가 일치합니다.").css("color","blue");
+	   	    		$('#pwchecker').val("1");
 	   	    	}else{
 	   	    		$(".palert").text("비밀번호가 일치하지 않습니다").css("color","red");
+	   	    		$('#pwchecker').val("0");
 	   	    	}
 	   	    	
 	   			
@@ -99,12 +110,20 @@ $(document).ready(function(){
 	   		
 	  
 	    }());
-	    
-	
-	
-	
-	
-	
+	   /* 비밀번호 체크 끝 */
+	   
+	   /* 비밀번호,text 확인 엔터 막기 시작*/
+	   $('input[type="password"]').keydown(function() {
+		   if (event.keyCode === 13) {
+		     event.preventDefault();
+		   };
+		 });
+	   $('input[type="text"]').keydown(function() {
+		   if (event.keyCode === 13) {
+		     event.preventDefault();
+		   };
+		 });
+	   /* 비밀번호 확인 엔터 막기 끝*/
 	
 	
     $('#registUser').click(function(){
@@ -130,13 +149,13 @@ $(document).ready(function(){
 		    success: function(data) {
 		    	console.log(data);
 		    	if(data == "success"){
-		    	 	alert("사용할 수 있습니다.")
+		 
 		    	 	$('#idchecker').val("1");
 		    	 	$('.idText').text("사용할 수 있는 아이디입니다.").css("color","blue");
 		    	}
 		    	
 		    	if(data == "fail"){
-		    		alert("이미 사용 중인 아이디입니다. 다시 입력해주세요.")
+		    		$('.idText').text("이미 사용 중인 아이디입니다. 다시 입력해주세요.").css("color","red");
 		    	}
 		    },
 		    error: function(err) {
@@ -146,13 +165,97 @@ $(document).ready(function(){
 		});
 
 			
-		return false; //이벤트 전파를 막기 위한 코드. e.preventDefault(); 대체 가능
+		return false; //이벤트 전파를 막기 위한 코드.
     })
     /* 아이디체크 끝 */
    
+     /* 닉네임 체크 시작 */
+    $("#nickcheck").click(function(){
+    	  event.stopPropagation();
+    	  
+    	  var userid = $('#nick').val();
+  		$('#nick').keyup(function(){
+  	 		$('#nickchecker').val("0");
+  	 		$('.nickText').text("닉네임을 확인해주세요.").css("color","red");
+  	 	})
+    	  
+    	var nick = $("#nick").val();
+    	
+    	$.ajax({
+		    url:'/request/nickcheck',
+		    type:'POST',
+		    data:{"nick" : nick}, //보낼 데이터
+		    success: function(data) {
+		    	console.log(data);
+		    	if(data == "success"){
+		    		$('#nickchecker').val("1");
+		    	 	$('.nickText').text("사용할 수 있는 닉네임입니다.").css("color","blue");
+		    	}
+		    	
+		    	if(data == "fail"){
+		    	 	$('.nickText').text("이미 등록된 닉네임입니다. 다시 입력해주세요").css("color","red");
+		    	}
+		    },
+		    error: function(err) {
+		    	console.log(err);
+		    	
+		    }
+		});
+
+			
+		return false; //이벤트 전파를 막기 위한 코드.
+    })
+    	
+    /* 닉네임 체크 끝 */
+    
+     /* 이메일 체크 */
+    $("#eMailCheck").keyup(function(){
+    
+    	var email = $("#eMailCheck").val();
+    	
+    	var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+    	
+    	if(email.match(regExp) != null){
+    		$(".emailText").empty();
+    		$("#emailchecker").val("1");
+    	}else{
+    		$(".emailText").text("이메일 형식에 맞지 않습니다.").css("color","red");
+    		$("#emailchecker").val("0");
+    	} 
+    	
+    	return false;
+    })
+    /* 이메일 체크 끝*/
+    
+    	
+   })
+   
+    function check(){
+    	var idcheck = $('#idchecker').val();
+    	var pwcheck = $('#pwchecker').val(); 	
+    	var nickcheck = $('#nickchecker').val();
+    	var emailcheck = $('#emailchecker').val();
+    	
+    	if(idcheck == "1" && pwcheck == "1" && nickcheck == "1" && emailcheck == "1"){
+    		alert("회원가입에 성공하였습니다.")
+    		return true;
+    	}else if(idcheck || "1" && pwcheck || "1" && nickcheck || "1" && emailcheck || "1"){
+    			
+    			alert("틀린 곳이 있는지 다시 확인해주십시오.")
+				 return false;
+    	}
+    	
+
+    
+}
+    
+    
+    
+    
+    
     
 
-})
+
 
 
 </script>

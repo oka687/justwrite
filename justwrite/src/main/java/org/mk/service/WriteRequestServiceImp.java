@@ -22,4 +22,13 @@ public class WriteRequestServiceImp implements WriteRequestService {
 		return mapper.idCheck(id);
 	}
 
+	@Override
+	public UserInfo nickCheck(String nick) {
+		
+		System.out.println("서비스에 nick값들어옴: "+nick);
+		
+		
+		return mapper.nickCheck(nick);
+	}
+
 }

@@ -40,9 +40,31 @@ public class WriteRequestController {
 			return "fail";
 		}
 		
-		
-		
+	}
 	
+	@PostMapping(value = "/nickcheck", produces = "application/text; charset=UTF-8")
+	  public String readNick(@RequestBody String nick) {
+
+		System.out.println(nick);
+	
+		String[] splitnic = nick.split("=");
+		
+		String nickch = splitnic[1];
+	
+			
+		
+			System.out.println("<-----컨트롤러------>");
+		UserInfo nickRecheck = service.nickCheck(nickch);
+
+		if(nickRecheck == null) {
+			System.out.println("success");
+			
+			return "success";
+		}else {
+			System.out.println("fail");
+			return "fail";
+		}
+		
 	}
 
 }

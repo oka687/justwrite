@@ -7,4 +7,6 @@ public interface WriteRequestService {
 	
 	public UserInfo idCheck(String id);
 	
+	public UserInfo nickCheck(String nick);
+	
 }
