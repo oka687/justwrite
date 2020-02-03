@@ -12,6 +12,8 @@
 	select nickName from userinfo where nickName = #{nick}
 </select>
 
-
+<select id="loginc" resultType="org.mk.domain.Login">
+		select id, pw from userinfo where id = #{id} and pw = #{pw}
+</select>
 
 </mapper>

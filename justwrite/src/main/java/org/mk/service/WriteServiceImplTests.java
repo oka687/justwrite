@@ -3,13 +3,12 @@ package org.mk.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-
 
 import lombok.Setter;
 
@@ -50,6 +49,7 @@ public class WriteServiceImplTests {
 	  }
 
 	
+
 	
 	  
 }

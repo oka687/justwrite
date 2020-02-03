@@ -1,5 +1,6 @@
 package org.mk.mapper;
 
+import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 
 public interface WriteMapper {
@@ -20,6 +21,10 @@ public interface WriteMapper {
 	public void userRegist(UserInfo info);
 	
 	public UserInfo readUser(String id);
+	
+	public Login loginc(Login login);
+
+
 	
 //	
 //	public List<BoardVO> getListWithPaging(Criteria cri);

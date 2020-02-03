@@ -19,19 +19,21 @@
  <div class="bg" style="width: 100%; height: 100%;">
 
         <div class="login_form" style="width: 50%; margin: auto;  text-align: center;">
+         
             <div class="logo_write" style="font-size: 50px; padding: 10px;">
                 JustWrite
             </div>
 
             <div id="user_id" style="margin: 10px;">
-                <input type="text" style="width: 50%; height: 50px; padding: 3px; cursor: pointer; font-size: 30px;" placeholder="아이디">
+                <input type="text" id="login_id" style="width: 50%; height: 50px; padding: 3px; cursor: pointer; font-size: 30px;" placeholder="아이디">
             	
             </div>
             <div id="user_pw" style="margin: 10px;">
-                <input type="password" style="width: 50%; height: 50px; padding: 3px; cursor: pointer; font-size: 30px;" placeholder="비밀번호">
-			
+                <input type="password" id="login_pw" style="width: 50%; height: 50px; padding: 3px; cursor: pointer; font-size: 30px;" placeholder="비밀번호">
+				<h3 class="loginForm"></h3>
             </div>
-            <button type="submit" style="margin-top: 2%;">로그인</button>
+            <button id="logincheck" style="margin-top: 2%;">로그인</button>
+           
             <button type="submit" id="registUser" style="margin-top: 2%;">회원가입</button>
         </div>
         
@@ -85,8 +87,6 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	//check();
-    
 	/* 비밀번호 체크 즉시실행함수 시작*/
 	   (function idChecker(){
 		   event.stopPropagation();
@@ -111,6 +111,43 @@ $(document).ready(function(){
 	  
 	    }());
 	   /* 비밀번호 체크 끝 */
+	$("#logincheck").click(function(){
+		 
+		
+		var loginId = $("#login_id").val();
+		var loginPw = $("#login_pw").val();
+		console.log(loginId);
+		console.log(loginPw);
+		
+		$.ajax({
+		    url:'/request/loginp',
+		    type:'POST',
+		    dataType:'text',
+		    contentType : "application/json; charset=utf-8",
+		    data:JSON.stringify(
+		    		  {"id" : loginId,
+		  		    	"pw" : loginPw}
+		    		), 
+		    success: function(data) {
+		    	
+		    	if(data == "success"){
+		    		
+		    		location.replace("http://localhost:8080/justwrites/firstPage");
+		    	}
+		    	
+		    	if(data == "fail"){
+		    	
+		    		$('.loginForm').text("일치하지 않는 정보입니다. 아이디와 비밀번호를 확인해주세요.").css("color","red");
+		    	}
+		    },
+		    error: function(err) {
+		    	console.log(err);				    	
+		    }
+		});			
+	})
+		
+
+	
 	   
 	   /* 비밀번호,text 확인 엔터 막기 시작*/
 	   $('input[type="password"]').keydown(function() {
@@ -186,7 +223,7 @@ $(document).ready(function(){
 		    type:'POST',
 		    data:{"nick" : nick}, //보낼 데이터
 		    success: function(data) {
-		    	console.log(data);
+		    	
 		    	if(data == "success"){
 		    		$('#nickchecker').val("1");
 		    	 	$('.nickText').text("사용할 수 있는 닉네임입니다.").css("color","blue");
@@ -245,7 +282,8 @@ $(document).ready(function(){
 				 return false;
     	}
     	
-
+    
+  
     
 }
     

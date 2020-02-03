@@ -1,10 +1,10 @@
 package org.mk.service;
 
+import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 import org.mk.mapper.WriteMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 import lombok.Setter;
 
@@ -32,7 +32,9 @@ public class WriteServiceImpl implements WriteService {
 		
 		return mapper.readUser(id);
 	}
-	
+
+
+
 
 	
 	

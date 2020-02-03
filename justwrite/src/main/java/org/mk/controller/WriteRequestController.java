@@ -1,6 +1,13 @@
 package org.mk.controller;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
+import org.mk.service.PwEnc;
 import org.mk.service.WriteRequestService;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +20,8 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 
 public class WriteRequestController {
+	
+	private PwEnc enc;
 	
 	
 	private WriteRequestService service;
@@ -66,5 +75,30 @@ public class WriteRequestController {
 		}
 		
 	}
+	
+	
+	@PostMapping(value = "/loginp", produces = "application/json; charset=UTF-8")
+	public String loginp(@RequestBody Login login, HttpServletRequest request) {
+		
 
+		
+		String pw = login.getPw();
+		
+		String pwenc = enc.enc(pw);	
+		login.setPw(pwenc);
+		
+		Login result = service.loginc(login);
+		System.out.println(result);
+		if(result != null) {
+			System.out.println("로그인 성공");
+			return "success";
+		}else {
+			System.out.println("fail");
+			return "fail";
+		}
+		
+		
+	}
+	
+	
 }

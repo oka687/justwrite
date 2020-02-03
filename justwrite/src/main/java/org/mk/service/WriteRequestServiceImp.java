@@ -1,5 +1,6 @@
 package org.mk.service;
 
+import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 import org.mk.mapper.RequestMapper;
 import org.springframework.stereotype.Service;
@@ -30,5 +31,15 @@ public class WriteRequestServiceImp implements WriteRequestService {
 		
 		return mapper.nickCheck(nick);
 	}
+	
+	
+	@Override
+	public Login loginc(Login login) {
+		
+		
+		
+		return mapper.loginc(login);
+	}
+	
 
 }
