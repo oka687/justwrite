@@ -1,13 +1,13 @@
 package org.mk.controller;
-import java.util.List;
+import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 import org.mk.service.PwEnc;
 import org.mk.service.WriteRequestService;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -78,9 +78,7 @@ public class WriteRequestController {
 	
 	
 	@PostMapping(value = "/loginp", produces = "application/json; charset=UTF-8")
-	public String loginp(@RequestBody Login login, HttpServletRequest request) {
-		
-
+	public String loginp(@RequestBody Login login, HttpServletRequest request, HttpSession session) {
 		
 		String pw = login.getPw();
 		
@@ -91,7 +89,12 @@ public class WriteRequestController {
 		System.out.println(result);
 		if(result != null) {
 			System.out.println("로그인 성공");
-			return "success";
+			
+
+			   session.setAttribute("id", login.getId());
+			   
+			   System.out.println(session = request.getSession());   
+			return session;
 		}else {
 			System.out.println("fail");
 			return "fail";
