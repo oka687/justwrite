@@ -60,8 +60,6 @@ public class WriteRequestController {
 		
 		String nickch = splitnic[1];
 	
-			
-		
 			System.out.println("<-----컨트롤러------>");
 		UserInfo nickRecheck = service.nickCheck(nickch);
 
@@ -78,7 +76,7 @@ public class WriteRequestController {
 	
 	
 	@PostMapping(value = "/loginp", produces = "application/json; charset=UTF-8")
-	public String loginp(@RequestBody Login login, HttpServletRequest request, HttpSession session) {
+	public String loginp(@RequestBody Login login, HttpServletRequest request) {
 		
 		String pw = login.getPw();
 		
@@ -90,11 +88,12 @@ public class WriteRequestController {
 		if(result != null) {
 			System.out.println("로그인 성공");
 			
-
+			
+			HttpSession session = request.getSession(true);
+			
 			   session.setAttribute("id", login.getId());
-			   
-			   System.out.println(session = request.getSession());   
-			return session;
+			  
+			return "success";
 		}else {
 			System.out.println("fail");
 			return "fail";

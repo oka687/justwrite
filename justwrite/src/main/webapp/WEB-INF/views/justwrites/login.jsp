@@ -116,8 +116,7 @@ $(document).ready(function(){
 		
 		var loginId = $("#login_id").val();
 		var loginPw = $("#login_pw").val();
-		console.log(loginId);
-		console.log(loginPw);
+
 		
 		$.ajax({
 		    url:'/request/loginp',
@@ -131,8 +130,8 @@ $(document).ready(function(){
 		    success: function(data) {
 		    	
 		    	if(data == "success"){
-		    		
-		    		location.replace("http://localhost:8080/justwrites/firstPage");
+		    		//alert("성공");
+		    		location.replace("http://localhost:8080/justwrites/check");
 		    	}
 		    	
 		    	if(data == "fail"){

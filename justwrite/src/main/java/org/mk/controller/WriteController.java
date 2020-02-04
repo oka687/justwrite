@@ -2,6 +2,7 @@ package org.mk.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.mk.domain.UserInfo;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.AllArgsConstructor;
@@ -44,16 +46,31 @@ public class WriteController {
 		
 	}
 	
-	@GetMapping("/firstPage")
-	public String firstPage(HttpServletRequest request) {
-		   HttpSession session = request.getSession();
-		   	System.out.println(session);
-		   if(session == null) {
-			   System.out.println("null입니다!!!");
-			   return "redirect:/justwrites/login";
+	@GetMapping("/check")
+	public ModelAndView check(HttpServletRequest request, HttpServletResponse response) {
+		
+		ModelAndView mav = new ModelAndView();	
+		 request.getSession().getAttribute("id");
+		 
+		 
+		   	System.out.println(request.getSession().getAttribute("id"));
+		   if( request.getSession().getAttribute("id") != null) {
+				System.out.println("널아님");
+				
+				String msg = "이미 로그인 중입니다.";
+						
+				mav.addObject(msg);		
+			   return mav;
+		   }else {
+			   mav.setViewName("/login");
 		   }
-		   	
-		   return "redirect:/justwrites/login";
+		   		return mav;
+	}
+	
+	
+	@GetMapping("/firstPage")
+	public void firstPage() {
+		  
 	}
 	
 	
