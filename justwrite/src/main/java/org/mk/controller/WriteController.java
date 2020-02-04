@@ -1,6 +1,8 @@
 package org.mk.controller;
 
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -47,7 +49,7 @@ public class WriteController {
 	}
 	
 	@GetMapping("/check")
-	public ModelAndView check(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView check(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		ModelAndView mav = new ModelAndView();	
 		 request.getSession().getAttribute("id");
@@ -58,7 +60,7 @@ public class WriteController {
 				System.out.println("널아님");
 				
 				String msg = "이미 로그인 중입니다.";
-						
+				response.sendRedirect("http://localhost:8080/justwrites/firstPage");
 				mav.addObject(msg);		
 			   return mav;
 		   }else {
