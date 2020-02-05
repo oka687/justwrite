@@ -1,10 +1,6 @@
 package org.mk.controller;
 
 
-import java.io.IOException;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.mk.domain.UserInfo;
@@ -16,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.AllArgsConstructor;
@@ -59,8 +55,12 @@ public class WriteController {
 	
 	
 	@GetMapping("/firstPage")
-	public void firstPage() {
+	public void firstPage(@SessionAttribute("nick") String nick, Model model) {
 		  
+		System.out.println(nick);
+		model.addAttribute("userNick", nick);
+		
+		
 	}
 	
 	

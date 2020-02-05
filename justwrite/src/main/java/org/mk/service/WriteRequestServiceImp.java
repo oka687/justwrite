@@ -36,9 +36,13 @@ public class WriteRequestServiceImp implements WriteRequestService {
 	@Override
 	public Login loginc(Login login) {
 		
-		
-		
 		return mapper.loginc(login);
+	}
+
+	@Override
+	public UserInfo takeUser(String id) {
+		
+		return mapper.takeUser(id);
 	}
 	
 

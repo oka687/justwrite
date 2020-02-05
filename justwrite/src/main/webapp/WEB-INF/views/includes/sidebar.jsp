@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +14,7 @@
 <!-- 사이드바 부분 -->
         <div class="menu">
             <div class="user_box">
-                <span>안녕하세요. 테스터님</span>
+                <span>안녕하세요. <c:out value="${userNick}" /> 님</span>
             </div>
             <div class="book_status">      
                     작성 중인 글 : 1

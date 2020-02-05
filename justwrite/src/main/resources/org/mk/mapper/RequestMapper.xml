@@ -16,4 +16,8 @@
 		select id, pw from userinfo where id = #{id} and pw = #{pw}
 </select>
 
+<select id="takeUser" resultType="org.mk.domain.UserInfo">
+	select id,nickName,userCode from userinfo where id = #{id}
+</select>
+
 </mapper>

@@ -7,6 +7,7 @@ import org.mk.domain.UserInfo;
 import org.mk.service.PwEnc;
 import org.mk.service.WriteRequestService;
 import org.mk.service.WriteService;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,7 @@ public class WriteRequestController {
 	
 	
 	private WriteRequestService service;
-	private WriteService writeService;
+	
 	
 	
 	
@@ -72,13 +73,13 @@ public class WriteRequestController {
 		}else {
 			System.out.println("fail");
 			return "fail";
-		}
+		} 
 		
 	}
 	
 	
 	@PostMapping(value = "/loginp", produces = "application/json; charset=UTF-8")
-	public String loginp(@RequestBody Login login, HttpServletRequest request) {
+	public String loginp(@RequestBody Login login, HttpServletRequest request, Model model) {
 		
 		String pw = login.getPw();
 		
@@ -93,12 +94,14 @@ public class WriteRequestController {
 			
 			HttpSession session = request.getSession(true);
 			
-			UserInfo info = writeService.readUser(login.getId());
+		
 			
-			String nick = info.getNickName();
+				UserInfo ucode = service.takeUser(login.getId());
 			
-			   session.setAttribute("id", login.getId());
-			   session.setAttribute("nick", nick);
+				
+			   session.setAttribute("ucode", ucode.getUserCode());
+			   session.setAttribute("nick", ucode.getNickName());
+	
 			  
 			return "success";
 		}else {

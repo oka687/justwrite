@@ -30,6 +30,7 @@
 				<mvc:interceptor>
 						<mvc:mapping path="/justwrites/*"/>
 						<mvc:exclude-mapping path="/justwrites/login"/>
+						<mvc:exclude-mapping path="/justwrites/regist"/>
 					<beans:ref bean="AuthInterceptor"/>
 				</mvc:interceptor>
 		</mvc:interceptors>

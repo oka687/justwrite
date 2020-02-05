@@ -12,4 +12,6 @@ public interface RequestMapper {
 	public UserInfo nickCheck(String nick);
 	
 	public Login loginc(Login login);
+	
+	public UserInfo takeUser(String id);
 }

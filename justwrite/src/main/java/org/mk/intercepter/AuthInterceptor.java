@@ -2,10 +2,8 @@ package org.mk.intercepter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import org.mk.domain.Login;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class AuthInterceptor extends HandlerInterceptorAdapter{
@@ -14,7 +12,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 	
-		Object session = request.getSession().getAttribute("id");
+		Object session = request.getSession().getAttribute("ucode");
 		System.out.println(session);
 		System.out.println("인터셉터로 왔음");
 		if(session == null) {
@@ -24,7 +22,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 			return false;
 		}
 		
-		Object login = request.getSession().getAttribute("id");
+		Object login = request.getSession().getAttribute("ucode");
 		System.out.println(login);
 		if(login == null) {
 			System.out.println("인터셉터로 왔음 : 로그인 정보 널");
@@ -32,6 +30,10 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 			return false;
 		}
 		
+
+	
+		Object u = request.getSession().getAttribute("ucode");
+	
 		
 		return true;
 	}
