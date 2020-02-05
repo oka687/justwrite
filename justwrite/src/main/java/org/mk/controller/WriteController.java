@@ -43,6 +43,7 @@ public class WriteController {
 	public void login() {
 		
 	}
+
 	
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
@@ -83,6 +84,10 @@ public class WriteController {
 			
 	  }
 	
+	@GetMapping("/editor")
+	public void editor() {
+		
+	}
 	
 	
 
