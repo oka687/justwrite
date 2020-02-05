@@ -1,6 +1,4 @@
 package org.mk.controller;
-import java.util.Arrays;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,6 +6,7 @@ import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 import org.mk.service.PwEnc;
 import org.mk.service.WriteRequestService;
+import org.mk.service.WriteService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +24,9 @@ public class WriteRequestController {
 	
 	
 	private WriteRequestService service;
+	private WriteService writeService;
+	
+	
 	
 	@PostMapping(value = "/idcheck", produces = "application/text; charset=UTF-8")
 	  public String readUser(@RequestBody String id) {
@@ -91,7 +93,12 @@ public class WriteRequestController {
 			
 			HttpSession session = request.getSession(true);
 			
+			UserInfo info = writeService.readUser(login.getId());
+			
+			String nick = info.getNickName();
+			
 			   session.setAttribute("id", login.getId());
+			   session.setAttribute("nick", nick);
 			  
 			return "success";
 		}else {

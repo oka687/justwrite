@@ -131,7 +131,7 @@ $(document).ready(function(){
 		    	
 		    	if(data == "success"){
 		    		//alert("성공");
-		    		location.replace("http://localhost:8080/justwrites/check");
+		    		location.replace("http://localhost:8080/justwrites/firstPage");
 		    	}
 		    	
 		    	if(data == "fail"){

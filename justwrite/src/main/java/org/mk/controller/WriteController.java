@@ -48,25 +48,13 @@ public class WriteController {
 		
 	}
 	
-	@GetMapping("/check")
-	public ModelAndView check(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
 		
-		ModelAndView mav = new ModelAndView();	
-		 request.getSession().getAttribute("id");
-		 
-		 
-		   	System.out.println(request.getSession().getAttribute("id"));
-		   if( request.getSession().getAttribute("id") != null) {
-				System.out.println("널아님");
-				
-				String msg = "이미 로그인 중입니다.";
-				response.sendRedirect("http://localhost:8080/justwrites/firstPage");
-				mav.addObject(msg);		
-			   return mav;
-		   }else {
-			   mav.setViewName("/login");
-		   }
-		   		return mav;
+		session.invalidate();
+		System.out.println("로그아웃 완료");
+		
+		return "redirect:/justwrites/login";
 	}
 	
 	
