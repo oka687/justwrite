@@ -13,7 +13,9 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 			throws Exception {
 	
 		Object session = request.getSession().getAttribute("ucode");
+		Object session2 = request.getSession().getAttribute("nick");
 		System.out.println(session);
+		System.out.println("유저의 닉네임 :"+session2);
 		System.out.println("인터셉터로 왔음");
 		if(session == null) {
 			System.out.println("인터셉터로 왔음 : 세션 널");

@@ -26,7 +26,7 @@
             <!-- 컨텐츠 표시 영역 -->
 
             <div class="content_area">
-                <div class="content_name"><p>현재 작성 중인 글</p></div>
+                <div class="content_name"><p>현재 작성 중인 글 [6]</p></div>
                 <div class="book_list">
                     <div class="book1">
                         <div class="book_img">

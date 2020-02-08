@@ -43,6 +43,10 @@ public class WriteController {
 	public void login() {
 		
 	}
+	@GetMapping("/findPage")
+	public void findPage() {
+		
+	}
 
 	
 	@GetMapping("/logout")
@@ -56,11 +60,8 @@ public class WriteController {
 	
 	
 	@GetMapping("/firstPage")
-	public void firstPage(@SessionAttribute("nick") String nick, Model model) {
-		  
-		System.out.println(nick);
-		model.addAttribute("userNick", nick);
-		
+	public void firstPage() {
+		 
 		
 	}
 	

@@ -25,7 +25,7 @@
 
             <span class="myinfo">내정보</span>
             <div class="dropBox">
-                <h class="dropBoxText" style="font-weight: 560; color: #0e0e0e; background-color: #B5E7ED;">${userNick}</h>
+                <h class="dropBoxText" style="font-weight: 560; color: #0e0e0e; background-color: #B5E7ED;">${sessionScope.nick}</h>
                 <h class="dropBoxText">홈</h>
                 <h class="dropBoxText">설정</h>
                 <h class="dropBoxText">내가 쓰고 있는 글</h>

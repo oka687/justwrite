@@ -1,0 +1,178 @@
+    body,html{
+        height: 100%;
+        width: 100%;
+        margin:0;
+        padding:0;
+
+}
+
+
+ /* 책표지 영역 */
+ .content_area{
+    width: 80%;
+    margin: auto;
+    height: 100%;
+    margin-top: 5%;
+   
+}
+
+.book_list{
+
+    width: 90%;
+    margin-top: 10%;
+    margin: auto;
+    height: 100%;
+    
+
+}
+.book1{
+    position: relative;
+    width: 100%;
+    height: 25%;
+    
+    padding-top: 2%;
+}
+.book_img{
+    position: relative;
+    display: inline-block;
+    width: 13%;
+    height: 100%; 
+    text-align: center;
+}
+
+.title_area{
+    width: 85%;
+    height: 100%;
+    display: inline-block;
+    float: right;
+    margin-left: 2%;
+}
+
+.title_line{
+    position: relative;
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: 20%;
+    font-weight: bold;
+    
+}
+.book_line{
+    
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: 20%;
+    font-weight: bold;
+    color: #4e4e4e;
+    
+} 
+
+.book_img img{
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+/* 책표지 영역 끝*/
+
+
+/* 챕터 영역 */
+
+.chapList{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+}
+
+.chapBox{
+    width: 100%;
+    height: 20%;
+   
+    
+}
+
+.chap_line{
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #B5E7ED;
+   
+}
+
+.chap_line:hover{
+    background-color: rgb(245, 245, 245);
+}
+
+.chapName{
+
+    font-size: 23px;
+    padding-left: 15px;
+    font-weight: bold;
+    
+}
+
+.chapInfo{
+    
+   
+    padding-left: 15px;
+   
+}
+
+
+
+
+.bookInfo{
+    width: 100%;
+    height: 100%;
+    
+}
+.fixButton{
+    font-size: 18px;
+    cursor: pointer;
+}
+.chapText{
+    font-size: 18px;
+    margin-left: 9px;
+}
+
+.blank{
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+
+
+/* 챕터 영역 끝*/
+
+    .bookInfo p{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+
+     /* 공통영역 */
+    ul{
+       
+        margin: 0px;
+        padding: 0px;
+    }
+    li{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    div{
+        -ms-user-select: none; 
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+         /* 공통영역 끝*/
+
+    

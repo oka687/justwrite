@@ -172,9 +172,9 @@
 .content_name{
     width: 87%;
     margin: auto;
- 
     font-weight: bold;
     font-size: 25px;
+    border-bottom: 1px solid #d8d8d8;
 }
 
 .book1{
@@ -183,6 +183,7 @@
     width: 45%;
     height: 25%;
     padding: 2%;
+    border-bottom: 1px solid #d8d8d8;
 }
 .book_img{
     position: relative;
