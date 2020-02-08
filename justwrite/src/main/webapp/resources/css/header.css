@@ -4,37 +4,120 @@
         width: 100%;
         height:100%;
     }
-    .bar{
-        display: inline-block;
-        height: 100%;
-        width: 20%;
-        background-color: #858282;
-
-    }
-    .logo{
-        text-align: center;
-    }
 
 
-    /* 컨텐츠 영역 */
-    .content_area{
+    /* 헤더 */
+    .header{
+        position: fixed;
         width: 100%;
+        height: 10%;
+         top: 0;
+        z-index: 2;
+        background-color: white;
+        
+    }
+
+    .header_con{
+        width: 80%;
+        margin: auto;
+    }
+    .headerMenu{
+        position: relative;
+        width: 7%;
         height: 100%;
-        background-color: skyblue;
-        float: right;
+        text-align: center;
+        color: #afaeae;
+        float: left;
+        font-weight: 540;
+       
+    }
+    .homeFont{
+        color: black;
+        font-weight: 560 !important;
+        cursor: pointer;
     }
 
-    .book_menu{
+    .headerMenu:hover{
+       color: black;
+       cursor: pointer;
+    }
 
+    .serachNovel{
+        position: relative;
+        width: 70%;
+        float: left;
+        margin-top: 0.8%;
+       
 
+    }
+    
+ 
+    .serachNovel img{
+        position: absolute;
+        width: 18px;
+        cursor: pointer;
+        left: 95%;
+        top: 20%;
+        padding: 4px;
+        z-index: 1;
+        opacity: 0.5;
+    }
+    .dropBox{
+        display: none;
+        position: absolute;
+        border: 1px solid #a8a6a6;
+        background-color: white;
+        width: 20%;
+        right: 13%;
+        top: 68%;
+        z-index: 1;
+        overflow: auto;
+        
+    }
+    .dropBoxText{
+        display: block;
+        padding: 15px;
+        color: #575757;
+        font-weight: 540;
+    }
+    
+    .dropBoxText:hover{
+        background-color: #f8f8f8;
+        color: #0e0e0e;
+        
+    }
 
+    .myinfo{
+        position: relative;
+        width: 7%;
+        height: 76%;
+        text-align: center;
+        float: left;
+        color: black;
+        font-weight: 560 !important;
+        cursor: pointer;
+        margin-top: 1.5%;
 
     }
 
-    /* 컨텐츠 영역 끝*/
+
+    /* 헤더 끝*/
 
 
+    ul{
+        display: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    li{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
 
+    span{
+        overflow: hidden;
+    }
 
     div {
    -ms-user-select: none; 
@@ -43,3 +126,14 @@
    -webkit-user-select: none;
    user-select: none;
  }
+
+
+ .img-button {
+    
+    background: url("./img/search.png" );
+    background-repeat: no-repeat;
+    width:40px;
+    height:40px;
+    border: 0;
+    cursor: pointer;
+  }

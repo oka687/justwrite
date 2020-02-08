@@ -1,8 +1,8 @@
     body,html{
         height: 100%;
         width: 100%;
-    margin:0;
-    padding:0;
+        margin:0;
+        padding:0;
 
 }
     .menu{
@@ -135,7 +135,7 @@
     .add_main{
         position: fixed;
         width: 70%;
-        height: 60%;
+        height: 50%;
         background-color: white;
         text-align: center;
         left:16%;
@@ -150,38 +150,13 @@
 
     }
     
-    /* 헤더 부분 */
-    .container{
-        position: relative;
-        width:80%;
-        height:10%;
-        background-color: #8a8888;
-        float: right;
-    }
-    .headerMenu{
-        
-        width: 15%;
-        height: 100%;
-        text-align: center;
-        background-color: #8a8888;
-        float: left;
-        
-    }
-      
 
-    .headerMenu:hover{
-        background-color: #afaeae;
-    }
-
-  /* 헤더 부분 끝*/
-
-  
  /* 컨텐츠 영역 */
  .content_area{
     width: 80%;
-    height: 92%;
-
-    float: right;
+    margin: auto;
+    height: 100%;
+    margin-top: 6%;
 }
 
 .book_list{
@@ -193,23 +168,32 @@
     
 
 }
+
+.content_name{
+    width: 87%;
+    margin: auto;
+ 
+    font-weight: bold;
+    font-size: 25px;
+}
+
 .book1{
     position: relative;
-    width: 100%;
+    display: inline-block;
+    width: 45%;
     height: 25%;
-    margin-top: 3%;
-    padding: 15px;
+    padding: 2%;
 }
 .book_img{
     position: relative;
     display: inline-block;
-    width: 13%;
+    width: 25%;
     height: 100%; 
     text-align: center;
 }
 
 .title_area{
-    width: 85%;
+    width: 73%;
     height: 100%;
     display: inline-block;
     float: right;
@@ -220,7 +204,7 @@
     position: relative;
     padding: 0;
     display: block;
-    width: 86%;
+    width: 100%;
     height: 20%;
     font-weight: bold;
     
@@ -229,7 +213,7 @@
     
     padding: 0;
     display: block;
-    width: 86%;
+    width: 100%;
     height: 20%;
     
     
