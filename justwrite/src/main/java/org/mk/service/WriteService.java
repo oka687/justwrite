@@ -1,5 +1,5 @@
 package org.mk.service;
-import org.mk.domain.Login;
+import org.mk.domain.BookInfo;
 import org.mk.domain.UserInfo;
 
 public interface WriteService {
@@ -12,6 +12,7 @@ public interface WriteService {
 //		
 		public UserInfo readUser(String id);
 		
+		public void novelMake(BookInfo binfo);
 
 //		
 //		public List<BookInfo> getList(String id);

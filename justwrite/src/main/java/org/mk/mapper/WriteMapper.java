@@ -1,5 +1,6 @@
 package org.mk.mapper;
 
+import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 
@@ -24,7 +25,7 @@ public interface WriteMapper {
 	
 	public Login loginc(Login login);
 
-
+	public void novelMake(BookInfo binfo);
 	
 //	
 //	public List<BoardVO> getListWithPaging(Criteria cri);

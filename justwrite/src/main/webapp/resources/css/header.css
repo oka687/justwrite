@@ -16,6 +16,9 @@
         background-color: white;
         
     }
+    .blanker{
+        height: 5px;
+    }
 
     .header_con{
         width: 80%;
@@ -28,6 +31,7 @@
         text-align: center;
         color: #afaeae;
         float: left;
+        font-size: 18px;
         font-weight: 540;
        
     }
@@ -97,15 +101,15 @@
         font-weight: 560 !important;
         cursor: pointer;
         margin-top: 1.5%;
+        font-size: 18px;
 
     }
 
 
     /* 헤더 끝*/
 
-
     ul{
-        
+ 
         margin: 0px;
         padding: 0px;
     }
@@ -114,7 +118,7 @@
         margin: 0px;
         padding: 0px;
     }
-
+ 
     span{
         overflow: hidden;
     }
@@ -127,13 +131,3 @@
    user-select: none;
  }
 
-
- .img-button {
-    
-    background: url("./img/search.png" );
-    background-repeat: no-repeat;
-    width:40px;
-    height:40px;
-    border: 0;
-    cursor: pointer;
-  }

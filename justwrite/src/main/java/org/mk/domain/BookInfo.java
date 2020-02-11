@@ -13,8 +13,10 @@ public class BookInfo {
 	
 	
 	private String bookCode;
-	private String userInfo_userCode;
+	private String userCode;
 	private String bookName;
+	private String bookGenre;
+	private String bookEx;
 	private String bookCover;
 	private Date dateDate;
 	

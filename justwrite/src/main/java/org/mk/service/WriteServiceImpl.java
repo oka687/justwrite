@@ -1,5 +1,6 @@
 package org.mk.service;
 
+import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 import org.mk.mapper.WriteMapper;
@@ -31,6 +32,14 @@ public class WriteServiceImpl implements WriteService {
 	public UserInfo readUser(String id) {
 		
 		return mapper.readUser(id);
+	}
+
+
+	@Override
+	public void novelMake(BookInfo binfo) {
+		
+		mapper.novelMake(binfo);
+		
 	}
 
 
