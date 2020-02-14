@@ -31,4 +31,10 @@
 	select * from bookInfo where bookCode = #{bookCode}
 </select>
 
+<update id="bookCount">
+	update userinfo set bookcount = bookcount + 1 where usercode = #{ucode}
+
+</update>
+
+
 </mapper>

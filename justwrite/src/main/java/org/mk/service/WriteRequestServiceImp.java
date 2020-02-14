@@ -60,6 +60,13 @@ public class WriteRequestServiceImp implements WriteRequestService {
 		
 		return mapper.novelNameCheck(bookCode);
 	}
+
+	@Override
+	public void bookCount(String ucode) {
+		
+		mapper.bookCount(ucode);
+		
+	}
 	
 
 }

@@ -70,7 +70,15 @@ public class WriteController {
 	
 	
 	@GetMapping("/firstPage")
-	public void firstPage() {
+	public void firstPage(@SessionAttribute("ucode") String ucode,Model model) {
+		
+	
+		
+		model.addAttribute("bookCount", service.takeBookCount(ucode).getBookCount());
+		
+		
+		model.addAttribute("bookList",service.getList(ucode));
+		System.out.println(service.getList(ucode));
 		 
 		
 	}

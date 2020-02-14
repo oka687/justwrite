@@ -1,4 +1,6 @@
 package org.mk.service;
+import java.util.List;
+
 import org.mk.domain.BookInfo;
 import org.mk.domain.UserInfo;
 
@@ -13,9 +15,9 @@ public interface WriteService {
 		public UserInfo readUser(String id);
 		
 	
-
+		public UserInfo takeBookCount(String ucode);
 //		
-//		public List<BookInfo> getList(String id);
+		public List<BookInfo> getList(String ucode);
 //		
 		public void userRegist(UserInfo info);
 

@@ -1,5 +1,7 @@
 package org.mk.mapper;
 
+import java.util.List;
+
 import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
@@ -11,7 +13,7 @@ public interface WriteMapper {
 	
 //	public BookInfo read(String bookinfo);
 	
-	//public List<BookInfo> getList(String id);
+	public List<BookInfo> getList(String ucode);
 	
 //	public void insert(BookInfo book);
 	
@@ -25,7 +27,7 @@ public interface WriteMapper {
 	
 	public Login loginc(Login login);
 
-
+	public UserInfo takeBookCount(String ucode);
 	
 //	
 //	public List<BoardVO> getListWithPaging(Criteria cri);

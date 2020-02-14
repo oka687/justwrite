@@ -26,188 +26,29 @@
             <!-- 컨텐츠 표시 영역 -->
 
             <div class="content_area">
-                <div class="content_name"><p>현재 작성 중인 글 [6]</p></div>
+                <div class="content_name"><p>현재 작성 중인 글 [${bookCount}]</p></div>
                 <div class="book_list">
-                    <div class="book1">
-                        <div class="book_img">
-                            <img src='/resources/img/ex.jpg'>
-                        </div>
-                            <div class="title_area">
-                                        <div class="title_line">
-                            데댕라랑 댕라 [10]
-                            <span class="updateDate" style="float: right;">
-                                2017/01/11
-                            </span>
-                            </div>
-                            <div class="book_line">
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                            </div>
-                         </div>
-                    </div>
-                    <div class="book1">
-                        <div class="book_img">
-                            <img src='/resources/img/ex.jpg'>
-                        </div>
-                            <div class="title_area">
-                                        <div class="title_line">
-                            데댕라랑 댕라 [10]
-                            <span class="updateDate" style="float: right;">
-                                2017/01/11
-                            </span>
-                            </div>
-                            <div class="book_line">
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                            </div>
-                         </div>
-                    </div>
-                    <div class="book1">
-                        <div class="book_img">
-                            <img src='/resources/img/ex.jpg'>
-                        </div>
-                            <div class="title_area">
-                                        <div class="title_line">
-                            데댕라랑 댕라 [10]
-                            <span class="updateDate" style="float: right;">
-                                2017/01/11
-                            </span>
-                            </div>
-                            <div class="book_line">
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                            </div>
-                         </div>
-                    </div>
-                     <div class="book1">
-                        <div class="book_img">
-                            <img src='/resources/img/ex.jpg'>
-                        </div>
-                            <div class="title_area">
-                                        <div class="title_line">
-                            데댕라랑 댕라 [10]
-                            <span class="updateDate" style="float: right;">
-                                2017/01/11
-                            </span>
-                            </div>
-                            <div class="book_line">
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                            </div>
-                         </div>
-                    </div>
-                    <div class="book1">
-                        <div class="book_img">
-                            <img src='/resources/img/ex.jpg'>
-                        </div>
-                            <div class="title_area">
-                                        <div class="title_line">
-                            데댕라랑 댕라 [10]
-                            <span class="updateDate" style="float: right;">
-                                2017/01/11
-                            </span>
-                            </div>
-                            <div class="book_line">
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                            </div>
-                         </div>
-                    </div>
-                    <div class="book1">
-                        <div class="book_img">
-                            <img src='/resources/img/ex.jpg'>
-                        </div>
-                            <div class="title_area">
-                                        <div class="title_line">
-                            데댕라랑 댕라 [10]
-                            <span class="updateDate" style="float: right;">
-                                2017/01/11
-                            </span>
-                            </div>
-                            <div class="book_line">
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                            </div>
-                         </div>
-                    </div>
-                    <div class="book1">
-                        <div class="book_img">
-                            <img src='/resources/img/ex.jpg'>
-                        </div>
-                            <div class="title_area">
-                                        <div class="title_line">
-                            데댕라랑 댕라 [10]
-                            <span class="updateDate" style="float: right;">
-                                2017/01/11
-                            </span>
-                            </div>
-                            <div class="book_line">
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                            </div>
-                         </div>
-                    </div>
-                    <div class="book1">
-                        <div class="book_img">
-                            <img src='/resources/img/ex.jpg'>
-                        </div>
-                            <div class="title_area">
-                                        <div class="title_line">
-                            데댕라랑 댕라 [10]
-                            <span class="updateDate" style="float: right;">
-                                2017/01/11
-                            </span>
-                            </div>
-                            <div class="book_line">
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                            </div>
-                         </div>
-                    </div>
-                    <div class="book1">
-                        <div class="book_img">
-                            <img src='/resources/img/ex.jpg'>
-                        </div>
-                            <div class="title_area">
-                                        <div class="title_line">
-                            데댕라랑 댕라 [10]
-                            <span class="updateDate" style="float: right;">
-                                2017/01/11
-                            </span>
-                            </div>
-                            <div class="book_line">
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                            </div>
-                         </div>
-                    </div>
-                    <div class="book1">
-                        <div class="book_img">
-                            <img src='/resources/img/ex.jpg'>
-                        </div>
-                            <div class="title_area">
-                                        <div class="title_line">
-                            데댕라랑 댕라 [10]
-                            <span class="updateDate" style="float: right;">
-                                2017/01/11
-                            </span>
-                            </div>
-                            <div class="book_line">
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                            </div>
-                         </div>
-                    </div>
+
+		              <c:forEach items="${bookList}" var="getList">
+		                    <div class="book1">
+		                        <div class="book_img">
+		                            <img src='<c:out value="${getList.bookCover }" />'>
+		                        </div>
+		                            <div class="title_area">
+				                                        <div class="title_line">
+				                          <c:out value="${getList.bookName }" />
+				                            <span class="updateDate" style="float: right;">
+				                                <c:out value="${getList.bookGenre }" />
+				                            </span>
+		                            </div>
+		                            <div class="book_line">
+		                         	<c:out value="${getList.bookEx }" />
+		                            </div>
+		                         </div>
+		                    </div>
+		          </c:forEach>
+                     
+               
 
 
                 </div>

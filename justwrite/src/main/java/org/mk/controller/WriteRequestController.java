@@ -129,6 +129,7 @@ public class WriteRequestController {
 	
 		
 		String upload = "C:/Users/oka68/git/justwrite/justwrite/src/main/webapp/resources/imgstore/"+ucode;
+		String fakeUpload = "/resources/imgstore/"+ucode;
 			MakeFolder makefolder = new MakeFolder();
 			
 			makefolder.making(upload);
@@ -142,13 +143,7 @@ public class WriteRequestController {
 		System.out.println(bookCode);
 		
 		 BookInfo checker = service.novelNameCheck(bookCode);
-		
-
-
-		
-
-		
-		
+	
 
 		if(checker == null) {
 			
@@ -169,17 +164,22 @@ public class WriteRequestController {
 				
 				e.printStackTrace();
 			}
-			binfo.setBookCover(upload+"/"+multipartFile.getOriginalFilename());
+			binfo.setBookCover(fakeUpload+"/"+multipartFile.getOriginalFilename());
 			System.out.println("저장소 :"+upload+"/"+multipartFile.getOriginalFilename());
 		}
 			
 		}else {
 			System.out.println("사진 없음!");
-			binfo.setBookCover("\"C:/Users/oka68/git/justwrite/justwrite/src/main/webapp/resources/imgstore/gibon.png");
+			binfo.setBookCover("/resources/imgstore/gibon.png");
 		}
 		
 		
 			service.novelMake(binfo);
+			
+			
+			service.bookCount(ucode);
+			
+			
 			return "redirect:/justwrites/findPage";
 		}
 		

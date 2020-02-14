@@ -1,5 +1,7 @@
 package org.mk.service;
 
+import java.util.List;
+
 import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
@@ -32,6 +34,20 @@ public class WriteServiceImpl implements WriteService {
 	public UserInfo readUser(String id) {
 		
 		return mapper.readUser(id);
+	}
+
+
+	@Override
+	public UserInfo takeBookCount(String ucode) {
+		
+		return mapper.takeBookCount(ucode);
+	}
+
+
+	@Override
+	public List<BookInfo> getList(String ucode) {
+		
+		return mapper.getList(ucode);
 	}
 
 
