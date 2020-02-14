@@ -12,10 +12,5 @@
 	call user_register(#{id},#{pw},#{nickName},#{eMail})
 </insert>
 
-<insert id="novelMake">
 
-	insert into bookinfo (bookCode,userCode,bookName,bookEx,bookGenre,bookCover) values
-	(#{bookCode},#{userCode},#{bookName},#{bookEx},#{bookGenre},#{bookCover});
-
-</insert>
 </mapper>

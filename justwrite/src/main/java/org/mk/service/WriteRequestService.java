@@ -1,5 +1,6 @@
 package org.mk.service;
 
+import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 
@@ -13,4 +14,11 @@ public interface WriteRequestService {
 	public Login loginc(Login login);
 	
 	public UserInfo takeUser(String id);
+	
+	public void novelMake(BookInfo binfo);
+	
+	public BookInfo novelNameCheck(String bookCode);
+	
+	
+	
 }

@@ -20,4 +20,15 @@
 	select id,nickName,userCode from userinfo where id = #{id}
 </select>
 
+<insert id="novelMake">
+
+	insert into bookinfo (bookCode,userCode,bookName,bookEx,bookGenre,bookCover) values
+	(#{bookCode},#{userCode},#{bookName},#{bookEx},#{bookGenre},#{bookCover});
+
+</insert>
+
+<select id="novelNameCheck" resultType="org.mk.domain.BookInfo">
+	select * from bookInfo where bookCode = #{bookCode}
+</select>
+
 </mapper>

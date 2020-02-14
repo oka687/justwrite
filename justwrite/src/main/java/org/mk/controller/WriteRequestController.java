@@ -1,17 +1,27 @@
 package org.mk.controller;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
+import org.mk.service.MakeFolder;
 import org.mk.service.PwEnc;
 import org.mk.service.WriteRequestService;
 import org.mk.service.WriteService;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.AllArgsConstructor;
 
@@ -111,6 +121,78 @@ public class WriteRequestController {
 		
 		
 	}
+	
+	
+	@Transactional
+	@PostMapping(value = "/novelWrite",  produces = "application/text; charset=UTF-8")
+	  public String novelWrite(@SessionAttribute("ucode") String ucode, MultipartFile[] uploadFile, BookInfo binfo, Model model) {
+	
+		
+		String upload = "C:/Users/oka68/git/justwrite/justwrite/src/main/webapp/resources/imgstore/"+ucode;
+			MakeFolder makefolder = new MakeFolder();
+			
+			makefolder.making(upload);
+		
+			System.out.println(binfo);
+		String bookCode = binfo.getBookName()+ucode;
+		binfo.setBookCode(bookCode);
+		
+		binfo.setUserCode(ucode);
+		
+		System.out.println(bookCode);
+		
+		 BookInfo checker = service.novelNameCheck(bookCode);
+		
+
+
+		
+
+		
+		
+
+		if(checker == null) {
+			
+			
+		if(uploadFile.length != 0) {
+		
+			System.out.println("사진 있음!");
+		for(MultipartFile multipartFile : uploadFile) {
+			System.out.println("---------");
+			System.out.println("업로드 파일 이름 :"+multipartFile.getOriginalFilename());
+			System.out.println("업로드 파일 사이즈 :"+multipartFile.getSize());
+		
+			File saveFile = new File(upload, multipartFile.getOriginalFilename());
+		
+			try {
+				multipartFile.transferTo(saveFile);
+			} catch (IllegalStateException | IOException e) {
+				
+				e.printStackTrace();
+			}
+			binfo.setBookCover(upload+"/"+multipartFile.getOriginalFilename());
+			System.out.println("저장소 :"+upload+"/"+multipartFile.getOriginalFilename());
+		}
+			
+		}else {
+			System.out.println("사진 없음!");
+			binfo.setBookCover("\"C:/Users/oka68/git/justwrite/justwrite/src/main/webapp/resources/imgstore/gibon.png");
+		}
+		
+		
+			service.novelMake(binfo);
+			return "redirect:/justwrites/findPage";
+		}
+		
+		return "fail";
+	  }
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

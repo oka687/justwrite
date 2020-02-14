@@ -35,17 +35,9 @@ public class WriteServiceImpl implements WriteService {
 	}
 
 
-	@Override
-	public void novelMake(BookInfo binfo) {
-		
-		mapper.novelMake(binfo);
-		
-	}
 
 
 
-
-	
 	
 
 }

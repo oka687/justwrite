@@ -1,5 +1,6 @@
 package org.mk.service;
 
+import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 import org.mk.mapper.RequestMapper;
@@ -43,6 +44,21 @@ public class WriteRequestServiceImp implements WriteRequestService {
 	public UserInfo takeUser(String id) {
 		
 		return mapper.takeUser(id);
+	}
+	
+	@Override
+	public void novelMake(BookInfo binfo) {
+		
+		mapper.novelMake(binfo);
+		
+	}
+
+	@Override
+	public BookInfo novelNameCheck(String bookCode) {
+		
+		
+		
+		return mapper.novelNameCheck(bookCode);
 	}
 	
 

@@ -25,7 +25,7 @@ public interface WriteMapper {
 	
 	public Login loginc(Login login);
 
-	public void novelMake(BookInfo binfo);
+
 	
 //	
 //	public List<BoardVO> getListWithPaging(Criteria cri);

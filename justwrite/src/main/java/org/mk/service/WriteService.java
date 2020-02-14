@@ -12,7 +12,7 @@ public interface WriteService {
 //		
 		public UserInfo readUser(String id);
 		
-		public void novelMake(BookInfo binfo);
+	
 
 //		
 //		public List<BookInfo> getList(String id);
