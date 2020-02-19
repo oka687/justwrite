@@ -57,6 +57,13 @@ public class WriteServiceImpl implements WriteService {
 
 		return mapper.getFind(bookCode);
 	}
+
+
+	@Override
+	public BookInfo getChap(String bookCode) {
+		
+		return mapper.getChap(bookCode);
+	}
 	
 
 

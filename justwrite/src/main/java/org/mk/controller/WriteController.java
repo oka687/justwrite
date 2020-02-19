@@ -52,6 +52,8 @@ public class WriteController {
 		
 		model.addAttribute("bookinfo",service.getFind(bookCode));
 		
+		model.addAttribute("chap",service.getChap(bookCode));
+		
 		
 	}
 	

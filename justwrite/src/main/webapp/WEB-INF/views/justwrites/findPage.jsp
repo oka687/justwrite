@@ -40,7 +40,12 @@
      
                     </div>
 
-
+		<c:set var="chap" value="${chap.bookName }" />
+		<c:if test="${chap eq null }">
+			널입니다.
+		</c:if>		
+		
+		
                     <div class="chapList">
                         <ul class="chapBox">
                             <li class="chap_line">

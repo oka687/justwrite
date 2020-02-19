@@ -23,4 +23,11 @@
 <select id="getFind" 	resultType="org.mk.domain.BookInfo">
 	select * from bookinfo where bookCode = #{bookCode}
 </select>
+
+<select id="getChap" 	resultType="org.mk.domain.BookContent">
+	select * from bookcontent where bookCode = #{bookCode}
+</select>
+
+
+
 </mapper>
