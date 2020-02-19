@@ -18,7 +18,9 @@
 </select>
 
 <select id="getList" resultType = "org.mk.domain.BookInfo">
-	select bookName,bookEx,bookGenre,bookCover, dateDate from bookinfo where usercode = #{ucode}
+	select bookCode, bookName,bookEx,bookGenre,bookCover, dateDate from bookinfo where usercode = #{ucode}
 </select>
-
+<select id="getFind" 	resultType="org.mk.domain.BookInfo">
+	select * from bookinfo where bookCode = #{bookCode}
+</select>
 </mapper>

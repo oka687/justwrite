@@ -67,6 +67,7 @@ public class WriteRequestServiceImp implements WriteRequestService {
 		mapper.bookCount(ucode);
 		
 	}
-	
+
+
 
 }

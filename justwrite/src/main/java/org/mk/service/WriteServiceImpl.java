@@ -50,7 +50,14 @@ public class WriteServiceImpl implements WriteService {
 		return mapper.getList(ucode);
 	}
 
+	@Override
+	public BookInfo getFind(String bookCode) {
+		System.out.println("서비스 들어옴");
+		System.out.println(bookCode);
 
+		return mapper.getFind(bookCode);
+	}
+	
 
 
 

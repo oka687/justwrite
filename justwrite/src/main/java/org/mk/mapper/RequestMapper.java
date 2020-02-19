@@ -21,4 +21,6 @@ public interface RequestMapper {
 	public BookInfo novelNameCheck(String bookCode);
 	
 	public void bookCount(String ucode);
+
+	
 }

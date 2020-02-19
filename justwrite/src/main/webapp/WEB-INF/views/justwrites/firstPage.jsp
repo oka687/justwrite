@@ -30,13 +30,15 @@
                 <div class="book_list">
 
 		              <c:forEach items="${bookList}" var="getList">
-		                    <div class="book1">
+		                    <a href="http://localhost:8080/justwrites/findPage?bookcode=<c:out value="${getList.bookCode }" />">
+		                    	<div class="book1">
 		                        <div class="book_img">
 		                            <img src='<c:out value="${getList.bookCover }" />'>
 		                        </div>
 		                            <div class="title_area">
 				                                        <div class="title_line">
 				                          <c:out value="${getList.bookName }" />
+				                          <input type="hidden" value='<c:out value="${getList.bookCode }" />'>
 				                            <span class="updateDate" style="float: right;">
 				                                <c:out value="${getList.bookGenre }" />
 				                            </span>
@@ -45,7 +47,7 @@
 		                         	<c:out value="${getList.bookEx }" />
 		                            </div>
 		                         </div>
-		                    </div>
+		                    </div></a>
 		          </c:forEach>
                      
                

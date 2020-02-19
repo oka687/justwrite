@@ -15,7 +15,7 @@
        <div class="header">
         <div class="header_con">
             <div class="blanker"></div>
-         <span class="headerMenu homeFont" style="font-weight: bold;"><p>홈</p></span>
+         <a href="http://localhost:8080/justwrites/firstPage"><span class="headerMenu homeFont" style="font-weight: bold;"><p>홈</p></span></a>
          <a href="http://localhost:8080/justwrites/makeNovel">
         	 <span class="headerMenu"><p>글쓰기</p></span>
         	</a>

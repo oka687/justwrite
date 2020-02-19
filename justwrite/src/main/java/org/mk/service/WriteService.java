@@ -14,6 +14,7 @@ public interface WriteService {
 //		
 		public UserInfo readUser(String id);
 		
+		public BookInfo getFind(String bookCode);
 	
 		public UserInfo takeBookCount(String ucode);
 //		

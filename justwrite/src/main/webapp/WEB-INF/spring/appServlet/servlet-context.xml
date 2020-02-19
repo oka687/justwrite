@@ -34,6 +34,15 @@
 						<mvc:exclude-mapping path="/justwrites/logout"/>
 					<beans:ref bean="AuthInterceptor"/>
 				</mvc:interceptor>
+				
+					<mvc:interceptor>
+						<mvc:mapping path="/request/*"/>
+						<mvc:exclude-mapping path="/request/idcheck"/>
+						<mvc:exclude-mapping path="/request/nickcheck"/>
+						<mvc:exclude-mapping path="/request/novelWrite"/>
+						<mvc:exclude-mapping path="/request/loginp"/>
+					<beans:ref bean="AuthInterceptor"/>
+				</mvc:interceptor>
 		</mvc:interceptors>
 
 

@@ -13,6 +13,7 @@ import org.mk.service.WriteService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,17 +43,24 @@ public class WriteController {
 		
 	
 	}
+	@GetMapping("/findPage")
+	public void findPage(@RequestParam("bookcode") String bookCode,Model model) {
+			System.out.println("---------파인드페이지");
+			System.out.println(bookCode);
+			
+			
+		
+		model.addAttribute("bookinfo",service.getFind(bookCode));
+		
+		
+	}
 	
 	
 	@GetMapping("/login")
 	public void login() {
 		
 	}
-	@GetMapping("/findPage")
-	public void findPage() {
-		
-	}
-	
+
 	@GetMapping("/makeNovel")
 	public void makeNovel() {
 		
@@ -97,6 +105,8 @@ public class WriteController {
 				System.out.println("<---문자열 변환----->");
 				System.out.println(info);
 				 service.userRegist(info);
+				 
+			
 				 
 				 rttr.addFlashAttribute("result", info.getId());
 				 return "redirect:/justwrites/login";

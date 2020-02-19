@@ -26,6 +26,8 @@ public interface WriteMapper {
 	public UserInfo readUser(String id);
 	
 	public Login loginc(Login login);
+	
+	public BookInfo getFind(String bookCode);
 
 	public UserInfo takeBookCount(String ucode);
 	

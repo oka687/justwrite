@@ -24,19 +24,17 @@
                 <div class="book_list">
                     <div class="book1">
                         <div class="book_img">
-                            <img src='/resources/img/ex.jpg'>
+                            <img src='<c:out value="${bookinfo.bookCover }" />'>
                         </div>
                             <div class="title_area">
                                         <div class="title_line">
-                            데댕라랑 댕라 [3]
+                           <c:out value="${bookinfo.bookName }" /> [3]
                             <span class="updateDate" style="float: right;">
-                                2017/01/11
+                                <c:out value="${bookinfo.dateDate }" />
                             </span>
                             </div>
                             <div class="book_line">
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
-                                댕라랑 대댕라의 사이 좋은 이야기가 있습니다
+                                <c:out value="${bookinfo.bookEx }" />
                             </div>
                          </div>
      

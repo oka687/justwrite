@@ -3,6 +3,7 @@ package org.mk.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +49,7 @@ public class WriteServiceImplTests {
 
 	  }
 
-	
+
 
 	
 	  
