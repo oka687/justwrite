@@ -1,6 +1,7 @@
 package org.mk.service;
 import java.util.List;
 
+import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
 import org.mk.domain.UserInfo;
 
@@ -16,7 +17,7 @@ public interface WriteService {
 		
 		public BookInfo getFind(String bookCode);
 		
-		public BookInfo getChap(String bookCode);
+		public List<BookContent> getChap(String bookCode);
 	
 		public UserInfo takeBookCount(String ucode);
 //		

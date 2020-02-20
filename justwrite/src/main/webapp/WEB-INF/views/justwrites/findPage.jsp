@@ -40,18 +40,16 @@
      
                     </div>
 
-		<c:set var="chap" value="${chap.bookName }" />
-		<c:if test="${chap eq null }">
-			널입니다.
-		</c:if>		
 		
-		
+		<c:choose>	
+			<c:when test="${chap ne null}">
+				<c:forEach items="${chap}" var="chap">
                     <div class="chapList">
                         <ul class="chapBox">
                             <li class="chap_line">
                                 <span class="blank"></span>
                                 <div class="bookInfo">
-                                    <p class="chapName">프롤로그</p>
+                                    <p class="chapName"><c:out value="${chap.bookName }" /></p>
                                     <p class="chapInfo">
                                         <span class="fixButton">
                                             수정
@@ -60,48 +58,29 @@
                                             글자수 5000
                                         </span>
                                         <span class="chapText">
-                                            2017/10/10
+                                            <c:out value="${chap.updateDate }" />
                                         </span>
                                     </p>
                                 </div>    
                              </li>
-                             <li class="chap_line">
+	                    </ul>
+	                  </div> 
+	                </c:forEach>    
+                    </c:when>
+                    
+                    <c:when test="${chap eq null}">
+                    		<div class="chapList">
+                        <ul class="chapBox">
+                            <li class="chap_line">
                                 <span class="blank"></span>
                                 <div class="bookInfo">
-                                    <p class="chapName">1화</p>
-                                    <p class="chapInfo">
-                                        <span class="fixButton">
-                                            수정
-                                        </span>
-                                        <span class="chapText">
-                                            글자수 5000
-                                        </span>
-                                        <span class="chapText">
-                                            2017/10/10
-                                        </span>
-                                    </p>
+        							<p>글 작성</p>
                                 </div>    
                              </li>
-                             <li class="chap_line">
-                                <span class="blank"></span>
-                                <div class="bookInfo">
-                                    <p class="chapName">2화</p>
-                                    <p class="chapInfo">
-                                        <span class="fixButton">
-                                            수정
-                                        </span>
-                                        <span class="chapText">
-                                            글자수 5000
-                                        </span>
-                                        <span class="chapText">
-                                            2017/10/10
-                                        </span>
-                                    </p>
-                                </div>    
-                             </li>
-                        </ul>
-
-                    </div>     
+	                    </ul>
+	                  </div> 
+                    </c:when>
+         </c:choose> 
                 </div>
              </div>
              

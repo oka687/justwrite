@@ -2,8 +2,8 @@ package org.mk.service;
 
 import java.util.List;
 
+import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
-import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 import org.mk.mapper.WriteMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +60,7 @@ public class WriteServiceImpl implements WriteService {
 
 
 	@Override
-	public BookInfo getChap(String bookCode) {
+	public List<BookContent> getChap(String bookCode) {
 		
 		return mapper.getChap(bookCode);
 	}
