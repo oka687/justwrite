@@ -33,6 +33,7 @@
              <h class="dropBoxText">설정</h>
              <h class="dropBoxText">내가 쓰고 있는 글</h>
              <h class="dropBoxText">소설 설정</h>
+             <a href="http://localhost:8080/justwrites/logout"><h class="dropBoxText">로그아웃</h></a>
          </div> 
      </div>    
 </div>      

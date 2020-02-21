@@ -20,6 +20,8 @@
 <%@include file = "../includes/header.jsp" %>           
             <!-- 헤더 부분 끝-->
      <!-- 컨텐츠 표시 영역 -->
+     	
+     	
             <div class="content_area">
                 <div class="book_list">
                     <div class="book1">
@@ -34,22 +36,23 @@
                             </span>
                             </div>
                             <div class="book_line">
-                                <c:out value="${bookinfo.bookEx }" />
+                                <c:out value='${bookinfo.bookEx.replaceAll("\\\<.*?\\\>","")}' />
                             </div>
                          </div>
      
                     </div>
 
 		
-		<c:choose>	
-			<c:when test="${chap ne null}">
-				<c:forEach items="${chap}" var="chap">
+		<c:choose>
+		
+			<c:when test="${chap ne 'null'}">
                     <div class="chapList">
+				<c:forEach items="${chap}" var="chapthis">
                         <ul class="chapBox">
                             <li class="chap_line">
                                 <span class="blank"></span>
                                 <div class="bookInfo">
-                                    <p class="chapName"><c:out value="${chap.bookName }" /></p>
+                                    <p class="chapName"><c:out value="${chapthis.chapName }" escapeXml="false" /></p>
                                     <p class="chapInfo">
                                         <span class="fixButton">
                                             수정
@@ -58,17 +61,17 @@
                                             글자수 5000
                                         </span>
                                         <span class="chapText">
-                                            <c:out value="${chap.updateDate }" />
+                                            <c:out value="${chapthis.updateDate }" />
                                         </span>
                                     </p>
                                 </div>    
                              </li>
 	                    </ul>
-	                  </div> 
 	                </c:forEach>    
-                    </c:when>
+	                  </div> 
+                  </c:when>
                     
-                    <c:when test="${chap eq null}">
+                    <c:when test="${chap eq 'null'}">
                     		<div class="chapList">
                         <ul class="chapBox">
                             <li class="chap_line">
@@ -94,14 +97,11 @@ $(document).ready(function(){
     info();
     infoHide();
 })
-
 function info(){
     $(".myinfo").click(function(){
         $(".dropBox").show();
     })
 }
-
-
 function infoHide(){
     $('html').click(function(e) { 
         if(!$(e.target).hasClass("myinfo")){
@@ -109,11 +109,7 @@ function infoHide(){
             $(".dropBox").hide();
             } 
         });
-
-
-
 }
-
 </script>
 
 

@@ -123,11 +123,19 @@ public class WriteRequestController {
 	
 	@Transactional
 	@PostMapping(value = "/novelWrite",  produces = "application/text; charset=UTF-8")
-	  public String novelWrite(@SessionAttribute("ucode") String ucode, MultipartFile[] uploadFile, BookInfo binfo, Model model) {
+	  public void novelWrite(@SessionAttribute("ucode") String ucode, MultipartFile[] uploadFile, BookInfo binfo, Model model) {
 	
 		
 		String upload = "C:/Users/oka68/git/justwrite/justwrite/src/main/webapp/resources/imgstore/"+ucode;
 		String fakeUpload = "/resources/imgstore/"+ucode;
+		
+		System.out.println(binfo.getBookEx());
+		
+		String changeEx = binfo.getBookEx().toString();
+			
+			System.out.println(changeEx);
+		
+		
 			MakeFolder makefolder = new MakeFolder();
 			
 			makefolder.making(upload);
@@ -178,10 +186,10 @@ public class WriteRequestController {
 			service.bookCount(ucode);
 			
 			
-			return "redirect:/justwrites/findPage";
+			//return "redirect:/justwrites/findPage";
 		}
 		
-		return "fail";
+		//return "fail";
 	  }
 	
 	

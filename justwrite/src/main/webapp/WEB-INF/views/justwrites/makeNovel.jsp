@@ -59,15 +59,12 @@ $(document).ready(function(){
 	imgUpload();
 	
 })
-
-
 function checkFile(fileName, fileSize){
 	
 	var maxSize = 5242880; //5MB
 	
 	
 	var reg = /(.*?)\.(jpg|jpeg|png|gif|bmp)$/;
-
   	if(fileName.match(reg)) {
   		if(fileSize > maxSize){
   			alert("이미지 용량이 5MB를 초과했습니다.")
@@ -78,21 +75,20 @@ function checkFile(fileName, fileSize){
 		alert("해당 파일은 이미지 파일이 아닙니다.");
 		$("#uploadFile").val("");
 		return false;
-
 	}
 	
 }
-
-
-
-
 function imgUpload(){
 	
 	$("#submit_btn").click(function(){
 		
 		var novelName = $("#bookName").val();
 		var novelGenre = $("#bookGenre").val();
-		var novelEx = $("#bookEx").val();
+		
+		
+		var text = document.getElementById('bookEx').value;
+		console.log(text);
+		var novelEx = text.replace(/(\n|\r\n)/g, '<br>');
 		
 		
 		
@@ -116,7 +112,6 @@ function imgUpload(){
 			}
 		
 		
-
 			formData.append("bookName", novelName);
 			formData.append("bookGenre", novelGenre);
 			formData.append("bookEx", novelEx);
@@ -145,7 +140,6 @@ function imgUpload(){
 				    
 				});
 		
-
 	
 	}else{
 		
@@ -187,5 +181,4 @@ function imgUpload(){
 	
 	
 }
-
 </script>

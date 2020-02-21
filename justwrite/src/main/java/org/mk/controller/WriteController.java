@@ -1,24 +1,22 @@
 package org.mk.controller;
 
 
-import java.io.File;
-import java.io.IOException;
+
 
 import javax.servlet.http.HttpSession;
 
-import org.mk.domain.BookInfo;
 import org.mk.domain.UserInfo;
 import org.mk.service.PwEnc;
 import org.mk.service.WriteService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.multipart.MultipartFile;
+
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.AllArgsConstructor;
@@ -54,8 +52,14 @@ public class WriteController {
 		
 		
 		System.out.println(service.getChap(bookCode));
-		model.addAttribute("chap",service.getChap(bookCode));
 		
+		if(service.getChap(bookCode).isEmpty()) {
+			System.out.println("널입니다.");
+			model.addAttribute("chap","null");
+		}else {
+
+		model.addAttribute("chap",service.getChap(bookCode));
+		}
 		
 	}
 	

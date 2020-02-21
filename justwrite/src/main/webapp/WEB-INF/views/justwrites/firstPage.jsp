@@ -38,13 +38,17 @@
 		                            <div class="title_area">
 				                                        <div class="title_line">
 				                          <c:out value="${getList.bookName }" />
-				                          <input type="hidden" value='<c:out value="${getList.bookCode }" />'>
+				                          
 				                            <span class="updateDate" style="float: right;">
 				                                <c:out value="${getList.bookGenre }" />
 				                            </span>
 		                            </div>
 		                            <div class="book_line">
-		                         	<c:out value="${getList.bookEx }" />
+		                         	<c:out value='${getList.bookEx.replaceAll("\\\<.*?\\\>","")}' />
+		                         	
+
+
+              	
 		                            </div>
 		                         </div>
 		                    </div></a>
