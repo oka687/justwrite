@@ -77,7 +77,10 @@
                             <li class="chap_line">
                                 <span class="blank"></span>
                                 <div class="bookInfo">
-        							<p>글 작성</p>
+        							<div class="notBox">
+        								<span style="display:inline-block; vertical-align: middle; height:1px; height: 54px;"></span>
+        								<h3 style="position:relative; left:1%">글 작성</h3>
+        							</div>
                                 </div>    
                              </li>
 	                    </ul>
