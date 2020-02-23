@@ -37,5 +37,11 @@
 </update>
 
 
+<insert id="bookWrite">
+	insert into bookContent (chapName, content)
+
+</insert>
+
+
 
 </mapper>

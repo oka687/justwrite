@@ -7,6 +7,7 @@ import java.net.URLDecoder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
@@ -133,8 +134,20 @@ public class WriteRequestController {
 	}
 	
 	@PostMapping(value="/realWrite",  produces = "application/text; charset=UTF-8")
-	public void realWrite() {
-		
+	public void realWrite(@RequestBody BookContent novel, @SessionAttribute("ucode") String ucode) throws UnsupportedEncodingException {
+					
+			System.out.println("에디터에서 받아옴");
+			
+				String bookName = URLDecoder.decode(novel.getBookName(), "UTF-8"); 
+				
+				System.out.println(bookName);
+				
+				novel.setBookName(bookName);
+				novel.setBookCode(bookName+ucode);
+				
+				
+				System.out.println(novel);
+				/*service.bookWrite(novel.getChapName(), novel.getContent());*/
 		
 	}
 	

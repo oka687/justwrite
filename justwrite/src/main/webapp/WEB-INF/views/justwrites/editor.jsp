@@ -86,31 +86,42 @@
 
   });  
   
-  function datasubmit()
-  {
+  function datasubmit(){
+	  
+	  
+	  	var urlCatch = location.search;
+	  	console.log(urlCatch);
+	  	
+	  	 var jbSplit = urlCatch.split('=');
+	  	 
+	  	 	console.log(jbSplit[1]);
+	  
 	  	  var noveltitle = $("#n_title").val();
           var novelText = typing_area.document.body.innerHTML;
+          
 		  
           console.log(noveltitle);
           console.log(novelText);
           
-          $.ajax{(
-        		  
-        		  url:'/request/novelWrite',
-      		    url:'/request/realWrite',
-    		    type:'POST',
-    		    dataType:'text',
-        		  contentType : "application/json; charset=utf-8",
-				    data: formData,
-				    type:'POST',
-			
-				    success:function(){};
-				    	
-          
-          
-          
-          )}
-          
+			$.ajax({
+				url:'/request/realWrite',
+			 	type:"post",
+			    dataType: "text",
+			    contentType : "application/json; charset=utf-8",
+			    type:'POST',
+			    data:JSON.stringify(
+			    		  {"chapName" : noveltitle,
+			  		    	"content" : novelText,
+			  		    	"bookName":jbSplit[1]
+			    		  }
+			    		),
+			    success:function(result){
+						console.log(result);
+			    }
+			    	
+			    
+			});
+		
           
           
           

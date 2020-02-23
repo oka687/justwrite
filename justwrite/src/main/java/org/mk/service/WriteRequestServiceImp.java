@@ -68,6 +68,13 @@ public class WriteRequestServiceImp implements WriteRequestService {
 		
 	}
 
+	@Override
+	public void bookWrite(String chapName, String content) {
+		
+		mapper.bookWrite(chapName, content);
+		
+	}
+
 
 
 }

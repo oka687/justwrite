@@ -21,6 +21,8 @@ public interface WriteRequestService {
 	
 	public void bookCount(String ucode);
 	
+	public void bookWrite(String chapName, String content);
+	
 
 	
 }
