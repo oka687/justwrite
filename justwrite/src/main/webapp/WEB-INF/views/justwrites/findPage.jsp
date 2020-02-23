@@ -52,7 +52,7 @@
                             <li class="chap_line">
                                 <span class="blank"></span>
                                 <div class="bookInfo">
-                                    <p class="chapName"><c:out value="${chapthis.chapName }" escapeXml="false" /></p>
+                                    <p class="chapName"><c:out value="${chapthis.chapName }" /></p>
                                     <p class="chapInfo">
                                         <span class="fixButton">
                                             수정
@@ -78,8 +78,9 @@
                                 <span class="blank"></span>
                                 <div class="bookInfo">
         							<div class="notBox">
-        								<span style="display:inline-block; vertical-align: middle; height:1px; height: 54px;"></span>
-        								<h3 style="position:relative; left:1%">글 작성</h3>
+        								<a href="http://localhost:8080/justwrites/check?bookName=<c:out value='${bookinfo.bookName }' />">
+        									<h3 style="position:relative; left:33%; margin-top: 12px;">작성</h3>
+        								</a>
         							</div>
                                 </div>    
                              </li>

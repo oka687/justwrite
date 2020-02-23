@@ -3,6 +3,12 @@ package org.mk.controller;
 
 
 
+import java.io.IOException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.mk.domain.UserInfo;
@@ -127,8 +133,30 @@ public class WriteController {
 	
 	
 	@GetMapping("/editor")
-	public void editor() {
+	public void editor(String bookName){
+				System.out.println(bookName);
+			
 		
+	}
+	
+	
+	
+	@GetMapping("/check")
+	public String check(String bookName){
+		System.out.println(bookName);
+				
+		if(bookName == null) {
+			return "redirect:/justwrites/firstPage";
+		}
+		
+		@SuppressWarnings("deprecation")
+		String encodeURL = URLEncoder.encode(bookName);
+	
+		
+		String writeURL="redirect:/justwrites/editor?bookName="+encodeURL;
+						
+		System.out.println(writeURL);
+		return writeURL;
 	}
 	
 	

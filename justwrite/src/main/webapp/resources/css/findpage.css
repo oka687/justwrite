@@ -103,13 +103,11 @@
 .chap_line{
     width: 100%;
     height: 100%;
-    border-bottom: 1px solid #B5E7ED;
+    border: 1px solid #B5E7ED;
+    margin-top: 35px;
    
 }
 
-.chap_line:hover{
-    background-color: rgb(245, 245, 245);
-}
 
 .chapName{
 
@@ -146,20 +144,29 @@
 .blank{
     display: inline-block;
     vertical-align: middle;
-    height: 35%;
+    height: 30%;
     
 }
 
 .notBox{
-position: relative;
-    border: 1px solid rgb(248, 149, 149);
-    left: 40%;
+	position: relative;
+    border: 1px solid rgb(156, 156, 243);
+    left: 42%;
     width: 14%;
     height: 35%;
     background-color: white;
     font-size: 18px;
 		
 }
+
+
+.notBox:hover{
+	background-color: rgb(245, 245, 245);
+	
+	
+	
+}
+
 
 
 /* 챕터 영역 끝*/

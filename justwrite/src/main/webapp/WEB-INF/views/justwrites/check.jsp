@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/firstPage.css" />
 </head>
 <body>
- <h1>로그인 중입니다…</h1> 
+ <h1>확인 중입니다......</h1> 
 
 </body>
 </html>
