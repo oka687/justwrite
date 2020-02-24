@@ -24,5 +24,7 @@ public interface WriteService {
 		public List<BookInfo> getList(String ucode);
 //		
 		public void userRegist(UserInfo info);
+		
+		
 
 }

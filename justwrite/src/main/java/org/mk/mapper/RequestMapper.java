@@ -1,5 +1,6 @@
 package org.mk.mapper;
 
+import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
@@ -22,6 +23,6 @@ public interface RequestMapper {
 	
 	public void bookCount(String ucode);
 
-	public void bookWrite(String chapName, String content);
+	public void bookWrite(BookContent novel);
 	
 }

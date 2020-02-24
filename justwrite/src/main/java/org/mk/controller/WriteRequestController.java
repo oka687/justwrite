@@ -133,8 +133,9 @@ public class WriteRequestController {
 		
 	}
 	
+	
 	@PostMapping(value="/realWrite",  produces = "application/text; charset=UTF-8")
-	public void realWrite(@RequestBody BookContent novel, @SessionAttribute("ucode") String ucode) throws UnsupportedEncodingException {
+	public void realWrite(@RequestBody BookContent novel, @SessionAttribute("ucode") String ucode) throws Exception {
 					
 			System.out.println("에디터에서 받아옴");
 			
@@ -142,12 +143,24 @@ public class WriteRequestController {
 				
 				System.out.println(bookName);
 				
+				System.out.println(novel.getChapNo());
+				
+				Integer nullChecker = novel.getChapNo();
+				
+				if(nullChecker == null) {
+					
+					int nullChecking = novel.getChapNo();
+					nullChecking = 0;
+					novel.setChapNo(nullChecking);
+				}
+				
+				
 				novel.setBookName(bookName);
 				novel.setBookCode(bookName+ucode);
 				
 				
 				System.out.println(novel);
-				/*service.bookWrite(novel.getChapName(), novel.getContent());*/
+				service.bookWrite(novel);
 		
 	}
 	

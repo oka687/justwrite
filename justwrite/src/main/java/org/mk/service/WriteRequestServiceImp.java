@@ -1,5 +1,6 @@
 package org.mk.service;
 
+import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
@@ -69,9 +70,9 @@ public class WriteRequestServiceImp implements WriteRequestService {
 	}
 
 	@Override
-	public void bookWrite(String chapName, String content) {
+	public void bookWrite(BookContent novel) {
 		
-		mapper.bookWrite(chapName, content);
+		mapper.bookWrite(novel);
 		
 	}
 

@@ -133,9 +133,12 @@ public class WriteController {
 	
 	
 	@GetMapping("/editor")
-	public void editor(String bookName){
+	public void editor(String bookName, @SessionAttribute("ucode") String ucode, Model model){
 				System.out.println(bookName);
 			
+				service.getChap(bookName+ucode);
+				
+				model.addAttribute("chaptor", service.getChap(bookName+ucode));
 		
 	}
 	

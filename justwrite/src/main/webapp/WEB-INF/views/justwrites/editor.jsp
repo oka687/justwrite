@@ -39,7 +39,7 @@
 <!--             <button type="button" onclick="htmledit('italic')">이탤릭</button>
             <button type="button" onclick="htmledit('underline')">밑줄선</button> -->
             <button type="button" onclick="datasubmit()">저장하기</button>
-       
+      
             <select id="fontSize" onchange="fontSizing()">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -52,10 +52,13 @@
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
+            
             <select id="chapNum" style="float: right;">
-                <option value="1">1화:프롤로그</option>
-                <option value="2">2화:누구나 실수는 없는 법이다</option>
-                <option value="3">3화:지랄</option>
+        
+            
+            	<c:forEach items="${chaptor}" var="chaptor"  varStatus="status">
+                	<option value='${status.count}'><c:out value="${chaptor.chapName }" /></option>
+				</c:forEach>
                 <!-- 화가 아닌 이름으로 불러올 것 -->
             </select>
         </div>
@@ -71,6 +74,8 @@
 
 
    </form>
+   
+   
 </body>
 
 <script type="text/javascript">
@@ -97,13 +102,22 @@
 	  	 	console.log(jbSplit[1]);
 	  
 	  	  var noveltitle = $("#n_title").val();
+	  	
+	  	  var chapNo = document.getElementById('chapNum');
+		  var chapcount = chapNo.childElementCount;
+			
+	  	  
+	  	 
+	  	  
+	  	  
+	  	  
+	  	  
           var novelText = typing_area.document.body.innerHTML;
           
 		  
-          console.log(noveltitle);
-          console.log(novelText);
+
           
-			$.ajax({
+		$.ajax({
 				url:'/request/realWrite',
 			 	type:"post",
 			    dataType: "text",
@@ -112,15 +126,16 @@
 			    data:JSON.stringify(
 			    		  {"chapName" : noveltitle,
 			  		    	"content" : novelText,
-			  		    	"bookName":jbSplit[1]
+			  		    	"bookName":jbSplit[1],
+			  		    	"chapNo":chapcount
 			    		  }
 			    		),
 			    success:function(result){
-						console.log(result);
+						alert("저장되었습니다.")
 			    }
 			    	
 			    
-			});
+			}); 
 		
           
           

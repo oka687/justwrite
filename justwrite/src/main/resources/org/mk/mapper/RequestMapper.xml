@@ -23,7 +23,7 @@
 <insert id="novelMake">
 
 	insert into bookinfo (bookCode,userCode,bookName,bookEx,bookGenre,bookCover) values
-	(#{bookCode},#{userCode},#{bookName},#{bookEx},#{bookGenre},#{bookCover});
+	(#{bookCode},#{userCode},#{bookName},#{bookEx},#{bookGenre},#{bookCover})
 
 </insert>
 
@@ -38,7 +38,8 @@
 
 
 <insert id="bookWrite">
-	insert into bookContent (chapName, content)
+	insert into bookContent (bookCode,chapNo,bookName,content,chapName) values
+	(#{bookCode},#{chapNo},#{bookName},#{content},#{chapName})
 
 </insert>
 

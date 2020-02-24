@@ -14,7 +14,7 @@ public class BookContent {
 	private String bookName;
 	private String bookCode;
 	private String content;
-	private String chapNo;
+	private int chapNo;
 	private String chapName;
 	private Date updateDate;
 	
