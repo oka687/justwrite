@@ -30,7 +30,7 @@
                         </div>
                             <div class="title_area">
                                         <div class="title_line">
-                           <c:out value="${bookinfo.bookName }" /> [3]
+                           <c:out value="${bookinfo.bookName }" /> [<span id="chapCount">0</span>]
                             <span class="updateDate" style="float: right;">
                                 <c:out value="${bookinfo.dateDate }" />
                             </span>
@@ -46,19 +46,21 @@
 		<c:choose>
 		
 			<c:when test="${chap ne 'null'}">
-                    <div class="chapList">
+                    <div class="chapList" id="forCount">
 				<c:forEach items="${chap}" var="chapthis">
                         <ul class="chapBox">
                             <li class="chap_line">
                                 <span class="blank"></span>
                                 <div class="bookInfo">
-                                    <p class="chapName"><c:out value="${chapthis.chapName }" /></p>
+                                    <p class="chapName"><c:out value="${chapthis.chapName }" />
+                                    	<span id="delete"><img src="/resources/img/trash.png"></span>
+                                    </p>
                                     <p class="chapInfo">
                                         <span class="fixButton">
                                             수정
                                         </span>
                                         <span class="chapText">
-                                            글자수 5000
+                                            글자수 <c:out value="${chapthis.textCount }" />
                                         </span>
                                         <span class="chapText">
                                             <c:out value="${chapthis.updateDate }" />
@@ -70,12 +72,11 @@
 	                </c:forEach>    
 	                  </div> 
                   </c:when>
-                    
                     <c:when test="${chap eq 'null'}">
                     		<div class="chapList">
                         <ul class="chapBox">
-                            <li class="chap_line">
-                                <span class="blank"></span>
+                            <li class="chap_line_not">
+                                <span class="blank_not"></span>
                                 <div class="bookInfo">
         							<div class="notBox">
         								<a href="http://localhost:8080/justwrites/check?bookName=<c:out value='${bookinfo.bookName }' />">
@@ -100,7 +101,29 @@
 $(document).ready(function(){
     info();
     infoHide();
+    chpaCount();
+    deleteChap();
 })
+function chpaCount(){
+	
+	  var chapNo = document.getElementById('forCount');
+	  var chapNumber = chapNo.childElementCount;
+
+		var count = $("#chapCount").text(chapNumber);
+		
+}
+
+
+function deleteChap(){
+	$("#delete").click(function(){
+		var a = $(this).prev('.chapName');
+		console.log(a);
+	})
+	
+}
+
+
+
 function info(){
     $(".myinfo").click(function(){
         $(".dropBox").show();

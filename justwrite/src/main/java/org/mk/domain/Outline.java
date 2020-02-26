@@ -14,6 +14,6 @@ public class Outline {
 	private String chapPracNo;
 	private String outLineContent;
 	private String keyword;
-	private Date dateDate;
+	private String dateDate;
 	
 }

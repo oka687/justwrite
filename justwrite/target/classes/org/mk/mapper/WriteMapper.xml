@@ -24,7 +24,7 @@
 	select * from bookinfo where bookCode = #{bookCode}
 </select>
 
-<select id="getChap" 	resultType="org.mk.domain.BookContent">
+<select id="getChap" resultType="org.mk.domain.BookContent">
 	select * from bookcontent where bookCode = #{bookCode}
 </select>
 

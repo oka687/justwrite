@@ -58,6 +58,9 @@
     font-size: 24px;
     
 }
+
+
+
 .book_line{
     
     padding-top: 10px;
@@ -70,6 +73,17 @@
    
     
 } 
+
+.chapName img{
+	width : 2%;
+	float : right;
+	position: relative;
+	right: 5%;
+}
+
+
+
+
 
 .book_img img{
     width: 100%;
@@ -103,10 +117,21 @@
 .chap_line{
     width: 100%;
     height: 100%;
+    border-bottom: 1px solid #B5E7ED;
+   
+}
+.chap_line_not{
+    width: 100%;
+    height: 100%;
     border: 1px solid #B5E7ED;
     margin-top: 35px;
    
 }
+
+.chap_line:hover{
+    background-color: rgb(245, 245, 245);
+}
+
 
 
 .chapName{
@@ -117,12 +142,21 @@
     
 }
 
+
+
 .chapInfo{
     
    
+    padding-left: 15px;
+   
+}
+
+.chapInfo_not{
+
     padding-left: 16px;
    
 }
+
 
 
 
@@ -144,6 +178,13 @@
 .blank{
     display: inline-block;
     vertical-align: middle;
+    
+}
+
+
+.blank_not{
+    display: inline-block;
+    vertical-align: middle;
     height: 30%;
     
 }
@@ -156,9 +197,9 @@
     height: 35%;
     background-color: white;
     font-size: 18px;
+    text-decoration:none;
 		
 }
-
 
 .notBox:hover{
 	background-color: rgb(245, 245, 245);
@@ -166,7 +207,6 @@
 	
 	
 }
-
 
 
 /* 챕터 영역 끝*/
@@ -195,6 +235,8 @@
         -webkit-user-select: none;
         user-select: none;
     }
+    
+    
          /* 공통영역 끝*/
 
     

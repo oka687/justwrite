@@ -106,12 +106,6 @@
 	  	  var chapNo = document.getElementById('chapNum');
 		  var chapcount = chapNo.childElementCount;
 			
-	  	  
-	  	 
-	  	  
-	  	  
-	  	  
-	  	  
           var novelText = typing_area.document.body.innerHTML;
           
 		  

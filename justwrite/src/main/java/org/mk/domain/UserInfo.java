@@ -16,7 +16,7 @@ public class UserInfo {
 	private String nickName;
 	private String eMail;
 	private int bookCount;
-	private Date reDate;
+	private String reDate;
 	private String bookCode;
 	
 

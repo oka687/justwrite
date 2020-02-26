@@ -38,11 +38,20 @@
 
 
 <insert id="bookWrite">
-	insert into bookContent (bookCode,chapNo,bookName,content,chapName) values
-	(#{bookCode},#{chapNo},#{bookName},#{content},#{chapName})
+	insert into bookContent (bookCode,chapNo,bookName,content,chapName,textCount) values
+	(#{bookCode},#{chapNo},#{bookName},#{content},#{chapName},#{textCount})
 
 </insert>
 
+<select id="checkChap" resultType="org.mk.domain.BookContent">
+
+	select * from bookContent where bookName = #{check} and chapName = #{checkChap}
+
+</select>
+
+<update id="novelUpdate">
+	update bookContent set content = #{content} where bookName = #{bookName} and chapName = #{chapName}
+</update>
 
 
 </mapper>

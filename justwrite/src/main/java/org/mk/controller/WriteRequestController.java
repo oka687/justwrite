@@ -1,5 +1,6 @@
 package org.mk.controller;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -133,34 +134,59 @@ public class WriteRequestController {
 		
 	}
 	
-	
+	@Transactional
 	@PostMapping(value="/realWrite",  produces = "application/text; charset=UTF-8")
 	public void realWrite(@RequestBody BookContent novel, @SessionAttribute("ucode") String ucode) throws Exception {
 					
-			System.out.println("에디터에서 받아옴");
-			
-				String bookName = URLDecoder.decode(novel.getBookName(), "UTF-8"); 
-				
-				System.out.println(bookName);
-				
-				System.out.println(novel.getChapNo());
-				
-				Integer nullChecker = novel.getChapNo();
-				
-				if(nullChecker == null) {
+		String bookName = URLDecoder.decode(novel.getBookName(), "UTF-8"); 
 					
-					int nullChecking = novel.getChapNo();
-					nullChecking = 0;
-					novel.setChapNo(nullChecking);
-				}
+			novel.setBookName(bookName);
+			
+			
+			
+				System.out.println(novel);
 				
+				String check = novel.getBookName();
+				String checkChap = novel.getChapName();
+				
+				System.out.println(check);
+				System.out.println(checkChap);
+				service.checkChap(check,checkChap);
+			
+				System.out.println(service.checkChap(check,checkChap));
+				
+			
+			if(service.checkChap(check,checkChap) == null) {
+				
+			
+				String removeTag = novel.getContent();
+				
+				String remove = removeTag.replaceAll("<[^>]*>","");
+				
+				remove = remove.replaceAll("\\p{Z}", "");
+				remove = remove.replaceAll("\\s+", ""); 
+				remove = remove.replaceAll("&nbsp;", "");
+				novel.setTextCount(remove.length());
+			
+				System.out.println(remove);
 				
 				novel.setBookName(bookName);
 				novel.setBookCode(bookName+ucode);
 				
 				
-				System.out.println(novel);
+			
 				service.bookWrite(novel);
+				
+		}else {
+			System.out.println(novel);
+			novel.setBookCode(bookName+ucode);
+			System.out.println("널이 아님");
+			System.out.println(novel);
+			service.novelUpdate(novel);
+			
+			
+			
+		}
 		
 	}
 	

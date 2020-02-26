@@ -1,5 +1,6 @@
 package org.mk.mapper;
 
+import org.apache.ibatis.annotations.Param;
 import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
@@ -24,5 +25,9 @@ public interface RequestMapper {
 	public void bookCount(String ucode);
 
 	public void bookWrite(BookContent novel);
+	
+	public BookContent checkChap(@Param("check") String check, @Param("checkChap") String checkChap);
+	
+	public void novelUpdate(BookContent novelUpdate);
 	
 }

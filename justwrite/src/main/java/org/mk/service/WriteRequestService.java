@@ -24,6 +24,8 @@ public interface WriteRequestService {
 	
 	public void bookWrite(BookContent novel);
 	
-
+	public BookContent checkChap(String check, String checkChap);
+	
+	public void novelUpdate(BookContent novel);
 	
 }

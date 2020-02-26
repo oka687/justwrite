@@ -7,8 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class BookInfo {
 	
 	
@@ -18,7 +17,7 @@ public class BookInfo {
 	private String bookGenre;
 	private String bookEx;
 	private String bookCover;
-	private Date dateDate;
+	private String dateDate;
 	
 	
 

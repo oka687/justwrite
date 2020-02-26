@@ -77,5 +77,19 @@ public class WriteRequestServiceImp implements WriteRequestService {
 	}
 
 
+	@Override
+	public BookContent checkChap(String check, String checkChap) {
+		// TODO Auto-generated method stub
+		return mapper.checkChap(check,checkChap);
+	}
+
+	@Override
+	public void novelUpdate(BookContent novel) {
+		
+		mapper.novelUpdate(novel);
+		
+	}
+
+
 
 }
