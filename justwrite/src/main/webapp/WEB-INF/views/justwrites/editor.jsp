@@ -91,6 +91,27 @@
 
   });  
   
+  
+  typing_area.document.body.onkeydown = function (e){
+	  if(e.which == 17) isCtrl=true;  
+	  if(e.which == 83 && isCtrl == true){
+		  datasubmit();
+			e.preventDefault();
+	  }
+	  
+  }
+  
+  
+  document.onkeydown=function(e){  
+	  
+	  if(e.which == 17) isCtrl=true;  
+	  if(e.which == 83 && isCtrl == true){
+		  datasubmit();
+			e.preventDefault();
+	  }
+	  
+  }
+  
   function datasubmit(){
 	  
 	  
