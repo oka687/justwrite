@@ -1,3 +1,4 @@
+
     body,html{
         height: 100%;
         width: 100%;
@@ -82,7 +83,14 @@
 }
 
 
-
+.deleteChap {
+background:url(C:/Users/oka68/git/justwrite/justwrite/src/main/webapp/resources/img/trash.png);
+background-repeat: no-repeat;
+float:right;
+width:40px;
+height:40px;
+border: 0;
+}
 
 
 .book_img img{
@@ -239,4 +247,3 @@
     
          /* 공통영역 끝*/
 
-    

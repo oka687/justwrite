@@ -90,6 +90,13 @@ public class WriteRequestServiceImp implements WriteRequestService {
 		
 	}
 
+	@Override
+	public void deleteChap(String bookCode, String chapName) {
+		
+		mapper.deleteChap(bookCode,chapName);
+		
+	}
+
 
 
 }

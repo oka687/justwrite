@@ -28,4 +28,6 @@ public interface WriteRequestService {
 	
 	public void novelUpdate(BookContent novel);
 	
+	public void deleteChap(String bookCode, String chapName);
+	
 }

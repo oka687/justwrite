@@ -1,6 +1,5 @@
 package org.mk.controller;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -189,6 +188,22 @@ public class WriteRequestController {
 		}
 		
 	}
+	@Transactional
+	@PostMapping(value="/deleteNovel", produces = "application/json; charset=UTF-8")
+	public String deleteNovel(@SessionAttribute("ucode") String ucode, @RequestBody BookContent deleteChap) {
+		System.out.println("삭제중");
+		String bookCode = deleteChap.getBookName()+ucode;
+		System.out.println(bookCode);
+		
+		String chapName = deleteChap.getChapName();
+		
+		service.deleteChap(bookCode,chapName);
+		
+		return "success";
+	}
+	
+	
+	
 	
 	
 	

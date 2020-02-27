@@ -53,5 +53,9 @@
 	update bookContent set content = #{content} where bookName = #{bookName} and chapName = #{chapName}
 </update>
 
+<delete id="deleteChap">
+	delete from bookcontent where bookCode = #{bookCode} and chapName = #{chapName} 
+
+</delete>
 
 </mapper>

@@ -53,8 +53,11 @@
                                 <span class="blank"></span>
                                 <div class="bookInfo">
                                     <p class="chapName"><c:out value="${chapthis.chapName }" />
-                                    	<span id="delete"><img src="/resources/img/trash.png"></span>
+                                    
+                                    <button class="deleteChap" value="<c:out value='${chapthis.chapName }' />">삭제</button>
                                     </p>
+                                    	
+                                    
                                     <p class="chapInfo">
                                         <span class="fixButton">
                                             수정
@@ -114,11 +117,41 @@ function chpaCount(){
 }
 
 
+
+
+
 function deleteChap(){
-	$("#delete").click(function(){
-		var a = $(this).prev('.chapName');
-		console.log(a);
-	})
+		$(".deleteChap").click(function(){
+			
+		if(confirm("삭제하시면 복구할 수 없습니다. 정말로 삭제하시겠습니까?") == true){	
+			var chapName = $(this).val();
+			var bookName =  '<c:out value="${bookinfo.bookName }" />';
+			
+		
+			
+			$.ajax({			  
+				url:'/request/deleteNovel',
+			    type:'POST',
+			    dataType:'text',
+			    contentType : "application/json; charset=utf-8",
+			    data:JSON.stringify(
+			    		  {"bookName" : bookName,
+			  		    	"chapName" : chapName}
+			    		), 
+					    success: function(data) {
+					    	
+					    	if(data == "success"){
+					    		alert("삭제 성공");
+					    		window.location.reload();
+					    	}
+					    }
+			    })
+			
+		}else{
+			return false;
+		}
+		})
+		
 	
 }
 
