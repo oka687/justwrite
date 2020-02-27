@@ -133,6 +133,10 @@ public class WriteRequestController {
 		
 	}
 	
+	
+	
+	
+	
 	@Transactional
 	@PostMapping(value="/realWrite",  produces = "application/text; charset=UTF-8")
 	public void realWrite(@RequestBody BookContent novel, @SessionAttribute("ucode") String ucode) throws Exception {

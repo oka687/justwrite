@@ -66,6 +66,13 @@ public class WriteServiceImpl implements WriteService {
 	}
 
 
+	@Override
+	public BookContent editNovel(String bookCode, String chapName) {
+		
+		return mapper.editNovel(bookCode,chapName);
+	}
+
+
 
 
 

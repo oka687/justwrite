@@ -92,6 +92,21 @@ public class WriteController {
 		return "redirect:/justwrites/login";
 	}
 	
+	@GetMapping("/updateEd")
+	public void updateEd(@RequestParam("bookName") String bookName, @RequestParam("chapName") String chapName,@SessionAttribute("ucode") String ucode,Model model) {
+		
+		String bookCode = bookName+ucode;
+		
+		System.out.println(bookCode);
+		System.out.println(chapName);
+		
+		System.out.println(service.editNovel(bookCode,chapName));
+		
+		model.addAttribute("content",service.editNovel(bookCode,chapName));
+		
+		
+		
+	}
 	
 	@GetMapping("/firstPage")
 	public void firstPage(@SessionAttribute("ucode") String ucode,Model model) {

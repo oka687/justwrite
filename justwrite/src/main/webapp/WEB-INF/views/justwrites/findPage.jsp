@@ -60,7 +60,7 @@
                                     
                                     <p class="chapInfo">
                                         <span class="fixButton">
-                                            수정
+                                            <a href="http://localhost:8080/justwrites/updateEd?bookName=${bookinfo.bookName }&chapName=${chapthis.chapName}">수정</a>
                                         </span>
                                         <span class="chapText">
                                             글자수 <c:out value="${chapthis.textCount }" />

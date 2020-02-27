@@ -28,6 +28,9 @@
 	select * from bookcontent where bookCode = #{bookCode}
 </select>
 
+<select id="editNovel" resultType="org.mk.domain.BookContent">
+	select * from bookcontent where bookCode = #{bookCode} and chapName = #{chapName}
 
+</select>
 
 </mapper>

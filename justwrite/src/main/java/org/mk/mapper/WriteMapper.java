@@ -2,6 +2,7 @@ package org.mk.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
 import org.mk.domain.Login;
@@ -33,6 +34,8 @@ public interface WriteMapper {
 	public List<BookContent> getChap(String bookCode);
 
 	public UserInfo takeBookCount(String ucode);
+	
+	public BookContent editNovel(@Param("bookCode")String bookCode,@Param("chapName")String chapName);
 	
 //	
 //	public List<BoardVO> getListWithPaging(Criteria cri);
