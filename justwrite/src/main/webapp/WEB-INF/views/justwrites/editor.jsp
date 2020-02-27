@@ -36,8 +36,7 @@
     <div class="editor_bg">
         <div class="button_area"  style="width: 100%; height: 5%;">
             <button type="button" onclick="htmledit('BOLD')">볼드</button>
-<!--             <button type="button" onclick="htmledit('italic')">이탤릭</button>
-            <button type="button" onclick="htmledit('underline')">밑줄선</button> -->
+			<button type="button" onclick="pageMove()">홈으로</button>
             <button type="button" onclick="datasubmit()">저장하기</button>
       
             <select id="fontSize" onchange="fontSizing()">
@@ -76,6 +75,9 @@
    </form>
    
    
+
+   
+   
 </body>
 
 <script type="text/javascript">
@@ -86,6 +88,7 @@
     findWide();
     closeBar();
     opener();
+ 
 
     
 
@@ -111,6 +114,21 @@
 	  }
 	  
   }
+  
+  function pageMove(){
+	  if(confirm("페이지를 이동하시면 작성 중인 내용을 잃게 됩니다. 이동하시겠습니까?")){
+		  location.href = "http://localhost:8080/justwrites/firstPage";
+		  return false;
+	  }else{
+
+		  return false;
+	  }
+	  
+	  
+  }
+  
+  
+  
   
   function datasubmit(){
 	  
