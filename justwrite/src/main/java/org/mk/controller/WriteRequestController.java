@@ -19,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.multipart.MultipartFile;
@@ -192,6 +193,43 @@ public class WriteRequestController {
 		}
 		
 	}
+	
+	@Transactional
+	@PostMapping(value="/realWriteUpdate",  produces = "application/text; charset=UTF-8")
+	public void realWriteUpdate(@RequestBody BookContent novel, @SessionAttribute("ucode") String ucode) throws Exception {
+					
+		String bookName = URLDecoder.decode(novel.getBookName(), "UTF-8"); 
+	
+			novel.setBookName(bookName);
+			
+
+			novel.setBookCode(bookName+ucode);
+
+			System.out.println("확인");
+			System.out.println(novel.getBookCode());
+			System.out.println(novel.getBookName());
+			System.out.println(novel.getChapName());
+			System.out.println(novel.getChapNo());
+			
+			String removeTag = novel.getContent();
+			
+			String remove = removeTag.replaceAll("<[^>]*>","");
+			
+			remove = remove.replaceAll("\\p{Z}", "");
+			remove = remove.replaceAll("\\s+", ""); 
+			remove = remove.replaceAll("&nbsp;", "");
+			novel.setTextCount(remove.length());
+			
+			service.realWriteUpdate(novel);
+			
+			
+			
+		}
+		
+	
+	
+	
+	
 	@Transactional
 	@PostMapping(value="/deleteNovel", produces = "application/json; charset=UTF-8")
 	public String deleteNovel(@SessionAttribute("ucode") String ucode, @RequestBody BookContent deleteChap) {

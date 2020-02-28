@@ -18,6 +18,7 @@ public class BookContent {
 	private String chapName;
 	private String updateDate;
 	private int textCount;
+	private String realChapName;
 	
 
 }

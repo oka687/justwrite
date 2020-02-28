@@ -31,5 +31,6 @@ public interface RequestMapper {
 	public void novelUpdate(BookContent novelUpdate);
 	
 	public void deleteChap(@Param("bookCode")String bookCode, @Param("chapName")String chapName);
-	
+
+	public void realWriteUpdate(BookContent novel);
 }

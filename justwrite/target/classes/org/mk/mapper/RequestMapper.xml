@@ -58,4 +58,9 @@
 
 </delete>
 
+<update id="realWriteUpdate">
+	update bookContent set chapName = #{chapName},content = #{content}, textCount = #{textCount} where bookName = #{bookName} and chapName = #{realChapName}
+</update>
+
+
 </mapper>

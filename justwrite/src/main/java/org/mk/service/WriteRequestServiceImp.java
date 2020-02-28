@@ -97,6 +97,13 @@ public class WriteRequestServiceImp implements WriteRequestService {
 		
 	}
 
+	@Override
+	public void realWriteUpdate(BookContent novel) {
+		
+		mapper.realWriteUpdate(novel);
+		
+	}
+
 
 
 }

@@ -61,11 +61,12 @@
                 <!-- 화가 아닌 이름으로 불러올 것 -->
             </select>
         </div>
-      		<input type="text" id="n_title" value='<c:out value="${content.bookName }" />'>
-	        <iframe name="typing_area" id="typing" style="width: 100%; height: 100%; border-width: 1px; border-color: #a8a0a0; left:10%;"
-	        frameborder=0 framespacing=0 marginheight=0 marginwidth=0 scrolling=yes vspace=0>
-	         	<textarea name="textform" style="display:none"></textarea>
+      		<input type="text" id="n_title" value='<c:out value="${content.chapName }" />'>
+	        <iframe name="typing_area" id="typing" style="width: 100%; height: 100%; border-width: 1px; border-color: #a8a0a0; left:10%;
+	        frameborder=0 framespacing=0 marginheight=0 marginwidth=0 scrolling=yes vspace=0">
+	      
 	        </iframe>
+	       <textarea id="textform" name="textform" style="display:none">${content.content }</textarea>  
      
     </div>
   
@@ -88,14 +89,16 @@
     findWide();
     closeBar();
     opener();
- 
+    loadingText();
 
-    
+
 
   });  
-  typing_area.document.body.innerHTML = '<c:out value="${content.content }" />';
   
-  
+ 
+  var realtitle = $("#n_title").val();
+  console.log(realtitle);
+
   typing_area.document.body.onkeydown = function (e){
 	  if(e.which == 17) isCtrl=true;  
 	  if(e.which == 83 && isCtrl == true){
@@ -128,18 +131,26 @@
 	  
   }
   
-  
+  function loadingText(){
+	    var content = document.getElementById('textform').value;
+	    
+	
+	    
+	    typing_area.document.body.innerHTML = content;
+
+  }
   
   
   function datasubmit(){
 	  
-	  
+	  console.log(realtitle);
 	  	var urlCatch = location.search;
 	  	console.log(urlCatch);
 	  	
 	  	 var jbSplit = urlCatch.split('=');
-	  	 
-	  	 	console.log(jbSplit[1]);
+	  	 urlCatch = jbSplit[1];
+	  	 var jbSplit = urlCatch.split('&');
+	  	 	console.log(jbSplit[0]);
 	  
 	  	  var noveltitle = $("#n_title").val();
 	  	
@@ -148,11 +159,15 @@
 			
           var novelText = typing_area.document.body.innerHTML;
           
+		  console.log(noveltitle);
+
+		  console.log(jbSplit[0]);
+		  
 		  
 
           
-		$.ajax({
-				url:'/request/realWrite',
+ 	 	$.ajax({
+				url:'/request/realWriteUpdate',
 			 	type:"post",
 			    dataType: "text",
 			    contentType : "application/json; charset=utf-8",
@@ -160,8 +175,8 @@
 			    data:JSON.stringify(
 			    		  {"chapName" : noveltitle,
 			  		    	"content" : novelText,
-			  		    	"bookName":jbSplit[1],
-			  		    	"chapNo":chapcount
+			  		    	"bookName":jbSplit[0],
+			  		    	"realChapName":realtitle
 			    		  }
 			    		),
 			    success:function(result){
@@ -170,7 +185,7 @@
 			    	
 			    
 			}); 
-		
+		   
           
           
           
