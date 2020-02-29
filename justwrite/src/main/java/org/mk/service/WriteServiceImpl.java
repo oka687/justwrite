@@ -73,6 +73,14 @@ public class WriteServiceImpl implements WriteService {
 	}
 
 
+	@Override
+	public int getChapCount(String bookName, String ucode) {
+		
+		
+		return mapper.getChapCount(bookName,ucode);
+	}
+
+
 
 
 

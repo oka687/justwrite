@@ -44,9 +44,7 @@
 </insert>
 
 <select id="checkChap" resultType="org.mk.domain.BookContent">
-
 	select * from bookContent where bookName = #{check} and chapName = #{checkChap}
-
 </select>
 
 <update id="novelUpdate">
@@ -55,7 +53,6 @@
 
 <delete id="deleteChap">
 	delete from bookcontent where bookCode = #{bookCode} and chapName = #{chapName} 
-
 </delete>
 
 <update id="realWriteUpdate">

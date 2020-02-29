@@ -83,7 +83,7 @@
                                 <div class="bookInfo">
         							<div class="notBox">
         								<a href="http://localhost:8080/justwrites/check?bookName=<c:out value='${bookinfo.bookName }' />">
-        									<h3 style="position:relative; left:33%; margin-top: 12px;">작성</h3>
+        									<h3 style="position: relative;left: 37%;margin-top: 15px;">작성</h3>
         								</a>
         							</div>
                                 </div>    

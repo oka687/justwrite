@@ -178,6 +178,21 @@ public class WriteController {
 		return writeURL;
 	}
 	
+	@GetMapping("/bookList")
+	public void bookList(@SessionAttribute("ucode") String ucode,Model model) {
+		
+		model.addAttribute("bookList",service.getList(ucode));
+		
+		for(int i = 0; i < service.getList(ucode).size(); i++) {
+			
+			service.getChapCount(service.getList(ucode).get(i),ucode);
+		
+		
+		}		
+		//model.addAttribute("chapCount",service.());
+		
+	}
+	
 	
 
 }

@@ -28,12 +28,12 @@
 
          <span class="myinfo">내정보</span>
          <div class="dropBox">
-             <h class="dropBoxText" style="font-weight: 560; color: #0e0e0e; background-color: #B5E7ED;">${sessionScope.nick }</h>
-             <h class="dropBoxText">홈</h>
-             <h class="dropBoxText">설정</h>
-             <h class="dropBoxText">내가 쓰고 있는 글</h>
-             <h class="dropBoxText">소설 설정</h>
-             <a href="http://localhost:8080/justwrites/logout"><h class="dropBoxText">로그아웃</h></a>
+             <h4 class="dropBoxText" style="font-weight: 560; color: #0e0e0e; background-color: #B5E7ED;">${sessionScope.nick }</h4>
+             <h4 class="dropBoxText">홈</h4>
+             <h4 class="dropBoxText">설정</h4>
+             <a href="http://localhost:8080/justwrites/bookList"><h4 class="dropBoxText">내가 쓰고 있는 글</h4></a>
+             <h4 class="dropBoxText">소설 설정</h4>
+             <a href="http://localhost:8080/justwrites/logout"><h4 class="dropBoxText">로그아웃</h4></a>
          </div> 
      </div>    
 </div>      

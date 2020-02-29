@@ -37,6 +37,8 @@ public interface WriteMapper {
 	
 	public BookContent editNovel(@Param("bookCode")String bookCode,@Param("chapName")String chapName);
 	
+
+	
 //	
 //	public List<BoardVO> getListWithPaging(Criteria cri);
 	

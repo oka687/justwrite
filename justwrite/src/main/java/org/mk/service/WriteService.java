@@ -26,5 +26,8 @@ public interface WriteService {
 		public void userRegist(UserInfo info);
 		
 		public BookContent editNovel(String bookCode,String chapName);
+		
+		public int getChapCount(String bookName, String ucode);
+		
 
 }
