@@ -183,13 +183,9 @@ public class WriteController {
 		
 		model.addAttribute("bookList",service.getList(ucode));
 		
-		for(int i = 0; i < service.getList(ucode).size(); i++) {
-			
-			service.getChapCount(service.getList(ucode).get(i),ucode);
 		
+
 		
-		}		
-		//model.addAttribute("chapCount",service.());
 		
 	}
 	

@@ -2,6 +2,7 @@ package org.mk.service;
 
 import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
+import org.mk.domain.ChapCount;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 
@@ -31,5 +32,13 @@ public interface WriteRequestService {
 	public void realWriteUpdate(BookContent novel);
 	
 	public void deleteChap(String bookCode, String chapName);
+	
+	public int chapCount(String bookCode);
+	
+	public void updateCount(String bookCode, int bookCount);
+	
+	public void fixCount(String bookCode, int bookCount);
+	
+	public String nullCheck(String bookCode);
 	
 }

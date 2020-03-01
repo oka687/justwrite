@@ -22,7 +22,7 @@
             <div class="listBno" style="width: 10%;">번호</div>
             <div class="listTitle" style="width: 56%;">제목</div>
             <div class="chapCount"" style="width: 8%;">화수</div>
-            <div class="writeDate" style="width: 15%;">작성일</div>
+            <div class="writeDate" style="width: 14%;">작성일</div>
             <div class="listDelete" style="width: 8%;">삭제</div>
         </div>
         <c:forEach items="${bookList}" var="getList"  varStatus="status">
@@ -30,7 +30,7 @@
 	                <li class="lno" style="width: 10%; text-align: center;">${status.count}</li>
 	                <li class="bname" style="width: 56%;">${getList.bookName }</li>
 	                <li class="chapCount" style="width: 8%; text-align: center;">10</li>
-	                <li class="regDate" style="width: 15%; text-align: center;">${getList.dateDate}</li>
+	                <li class="regDate" style="width: 14%; text-align: center;">${getList.dateDate}</li>
 	                <li class="dbutton" style="width: 8%;text-align: center; cursor: pointer;">X</li>
 	        </ul>
         </c:forEach>

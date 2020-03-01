@@ -60,4 +60,23 @@
 </update>
 
 
+<select id="chapCount" resultType="int">
+	select count(*) from bookcontent where bookCode = #{bookCode}
+</select>
+
+<insert id="updateCount">
+	insert into chapcount (bookCode, count) values(#{bookCode},#{bookCount})
+</insert>
+
+<update id="fixCount">
+
+	update chapcount set count = #{bookCount} where bookCode = #{bookCode}
+
+</update>
+
+<select id="nullCheck" resultType="String">
+	select bookCode from chapcount where bookCode = #{bookCode}
+</select>
+
+
 </mapper>

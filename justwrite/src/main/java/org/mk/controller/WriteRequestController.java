@@ -178,16 +178,28 @@ public class WriteRequestController {
 				novel.setBookCode(bookName+ucode);
 				
 				
+				System.out.println("책 입력");
+					service.bookWrite(novel);
 			
-				service.bookWrite(novel);
+			
+					if(service.nullCheck(novel.getBookCode()) ==  null) {
+						int bookCount = service.chapCount(novel.getBookCode());
+						
+							service.updateCount(novel.getBookCode(),bookCount);
+					}else {
+						int bookCount = service.chapCount(novel.getBookCode());
+						service.fixCount(novel.getBookCode(), bookCount);
+					}
+						
 				
 		}else {
 			System.out.println(novel);
 			novel.setBookCode(bookName+ucode);
-			System.out.println("널이 아님");
-			System.out.println(novel);
+	
 			service.novelUpdate(novel);
-			
+		
+			int bookCount = service.chapCount(novel.getBookCode());
+			service.fixCount(novel.getBookCode(), bookCount);
 			
 			
 		}
@@ -205,11 +217,7 @@ public class WriteRequestController {
 
 			novel.setBookCode(bookName+ucode);
 
-			System.out.println("확인");
-			System.out.println(novel.getBookCode());
-			System.out.println(novel.getBookName());
-			System.out.println(novel.getChapName());
-			System.out.println(novel.getChapNo());
+
 			
 			String removeTag = novel.getContent();
 			
@@ -221,6 +229,8 @@ public class WriteRequestController {
 			novel.setTextCount(remove.length());
 			
 			service.realWriteUpdate(novel);
+			
+			
 			
 			
 			
@@ -240,6 +250,10 @@ public class WriteRequestController {
 		String chapName = deleteChap.getChapName();
 		
 		service.deleteChap(bookCode,chapName);
+		
+		int bookCount = service.chapCount(bookCode);
+		
+		service.fixCount(bookCode,bookCount);
 		
 		return "success";
 	}

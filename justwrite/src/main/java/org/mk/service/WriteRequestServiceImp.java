@@ -2,6 +2,7 @@ package org.mk.service;
 
 import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
+import org.mk.domain.ChapCount;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 import org.mk.mapper.RequestMapper;
@@ -102,6 +103,33 @@ public class WriteRequestServiceImp implements WriteRequestService {
 		
 		mapper.realWriteUpdate(novel);
 		
+	}
+
+	@Override
+	public int chapCount(String bookCode) {
+		
+		return mapper.chapCount(bookCode);
+	}
+
+	@Override
+	public void updateCount(String bookCode, int bookCount) {
+
+		
+		mapper.updateCount(bookCode, bookCount);
+		
+	}
+
+	@Override
+	public void fixCount(String bookCode, int bookCount) {
+		
+		mapper.fixCount(bookCode,bookCount);
+		
+	}
+
+	@Override
+	public String nullCheck(String bookCode) {
+		
+		return mapper.nullCheck(bookCode);
 	}
 
 
