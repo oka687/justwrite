@@ -262,8 +262,18 @@ public class WriteRequestController {
 	@PostMapping(value="/deleteChap", produces = "application/text; charset=UTF-8")
 	public String deleteChap(@SessionAttribute("ucode") String ucode, @RequestBody String bookCode) {
 
-		System.out.println(bookCode);
-		
+		System.out.println(service.novelNameCheck(bookCode).getBookCover());
+	
+		String path = "C:/Users/oka68/git/justwrite/justwrite/src/main/webapp"+service.novelNameCheck(bookCode).getBookCover();
+		File file = new File(path);
+
+		if(path != "/resources/imgstore/gibon.png" && file.exists() == true){
+			System.out.println("북이미지 삭제");
+		file.delete();
+
+	}
+
+
 		service.deleteBookInfo(ucode,bookCode);
 		service.deleteBookChap(bookCode);
 		
@@ -302,6 +312,7 @@ public class WriteRequestController {
 		
 		 BookInfo checker = service.novelNameCheck(bookCode);
 	
+		 service.updateCount(bookCode, 0);
 
 		if(checker == null) {
 			
