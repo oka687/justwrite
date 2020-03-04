@@ -258,7 +258,17 @@ public class WriteRequestController {
 		return "success";
 	}
 	
-	
+	@Transactional
+	@PostMapping(value="/deleteChap", produces = "application/text; charset=UTF-8")
+	public String deleteChap(@SessionAttribute("ucode") String ucode, @RequestBody String bookCode) {
+
+		System.out.println(bookCode);
+		
+		service.deleteBookInfo(ucode,bookCode);
+		service.deleteBookChap(bookCode);
+		
+		return "success";
+	}
 	
 	
 	

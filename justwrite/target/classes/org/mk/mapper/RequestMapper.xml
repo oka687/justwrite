@@ -78,5 +78,12 @@
 	select bookCode from chapcount where bookCode = #{bookCode}
 </select>
 
+<delete id="deleteBookInfo">
+	delete from bookinfo where usercode = #{ucode} and bookCode = #{bookCode}
+</delete>
+
+<delete id="deleteBookChap">
+	delete from bookcontent where bookCode = #{bookCode}
+</delete>
 
 </mapper>

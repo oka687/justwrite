@@ -127,8 +127,7 @@ function deleteChap(){
 			    dataType:'text',
 			    contentType : "application/json; charset=utf-8",
 			    data:JSON.stringify(
-			    		  {"bookName" : bookName,
-			  		    	"chapName" : chapName}
+			    		  {"bookName" : bookName}
 			    		), 
 					    success: function(data) {
 					    	

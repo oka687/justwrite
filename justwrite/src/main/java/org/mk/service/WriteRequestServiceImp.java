@@ -132,6 +132,29 @@ public class WriteRequestServiceImp implements WriteRequestService {
 		return mapper.nullCheck(bookCode);
 	}
 
+	@Override
+	public void deleteBookInfo(String ucode, String bookCode) {
+		
+		mapper.deleteBookInfo(ucode, bookCode);
+		
+	}
+
+	@Override
+	public void bookCode(String bookCode) {
+		
+		mapper.deleteBookChap(bookCode);
+		
+	}
+
+	@Override
+	public void deleteBookChap(String bookCode) {
+		
+		mapper.deleteBookChap(bookCode);
+		
+	}
+	
+	
+
 
 
 }

@@ -31,7 +31,7 @@
 	                <li class="bname" style="width: 56%;">${getList.bookName }</li>
 	                <li class="chapCount" style="width: 8%; text-align: center;">${getList.count }</li>
 	                <li class="regDate" style="width: 14%; text-align: center;">${getList.dateDate}</li>
-	                <li class="dbutton" style="width: 8%;text-align: center; cursor: pointer;">X</li>
+	                <button class="dbutton" style="left: 3%;position: relative;" value="<c:out value='${getList.bookCode }' />" >삭제</button>
 	        </ul>
         </c:forEach>
     </div>
@@ -39,7 +39,46 @@
 </body>
 
 <script type="text/javascript">
-    
+$(document).ready(function(){
+
+	selectDelete();
+	
+	
+
+})
+
+
+function selectDelete(){
+	
+	$('.dbutton').click(function(){
+		if(confirm("소설을 삭제하시면 절대로 복구할 수 없습니다. 정말로 삭제하시겠습니까?") == true){	
+		var bcode = $(this).val();
+	
+		
+		$.ajax({			  
+			url:'/request/deleteChap',
+		    type:'POST',
+		    dataType:'text',
+		    contentType : "application/text; charset=utf-8",
+		    data: bcode, 
+				    success: function(data) {
+				    	
+				    	if(data == "success"){
+				    		alert("삭제 성공");
+				    		window.location.reload();
+				    	}
+				    }
+		    })
+		
+		
+		}else{
+			
+			return false;
+		}
+	})
+
+	
+}
  
 
 </script>

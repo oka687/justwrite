@@ -41,4 +41,10 @@ public interface WriteRequestService {
 	
 	public String nullCheck(String bookCode);
 	
+	public void deleteBookInfo(String ucode, String bookCode);
+	
+	public void deleteBookChap(String bookCode);
+	
+	public void bookCode(String bookCode);
+	
 }

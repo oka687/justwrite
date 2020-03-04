@@ -42,4 +42,8 @@ public interface RequestMapper {
 	public void fixCount(@Param("bookCode")String bookCode, @Param("bookCount")int bookCount);
 	
 	public String nullCheck(String bookCode);
+	
+	public void deleteBookInfo(@Param("ucode")String ucode, @Param("bookCode")String bookCode);
+	
+	public void deleteBookChap(String bookCode);
 }
