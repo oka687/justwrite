@@ -4,13 +4,11 @@ package org.mk.controller;
 
 
 import java.net.URLEncoder;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.mk.domain.BookContent;
 import org.mk.domain.UserInfo;
+import org.mk.mapper.WriteMapper;
 import org.mk.service.PwEnc;
 import org.mk.service.WriteService;
 import org.springframework.stereotype.Controller;
@@ -35,7 +33,7 @@ public class WriteController {
 	
 	private WriteService service;
 	private PwEnc enc;
-	
+
 	@GetMapping("/userSearch")
 	public void search(@RequestParam("id") String id, Model model) {
 		
@@ -45,16 +43,18 @@ public class WriteController {
 	
 	}
 	@GetMapping("/findPage")
-	public void findPage(@RequestParam("bookcode") String bookCode,Model model) {
+	public void findPage(@RequestParam("bookcode") String bookCode,Model model, @SessionAttribute("ucode") String ucode) {
 			System.out.println("---------파인드페이지");
-			System.out.println(bookCode);
+
 			
 			
 		
 		model.addAttribute("bookinfo",service.getFind(bookCode));
 		
+		System.out.println(service.chapCount(bookCode));
+		model.addAttribute("counter",service.chapCount(bookCode));
 		
-		System.out.println(service.getChap(bookCode));
+		
 		
 		if(service.getChap(bookCode).isEmpty()) {
 			System.out.println("널입니다.");
@@ -181,7 +181,12 @@ public class WriteController {
 	@GetMapping("/bookList")
 	public void bookList(@SessionAttribute("ucode") String ucode,Model model) {
 		
-		model.addAttribute("bookList",service.getList(ucode));
+	
+	
+		
+		
+		
+		model.addAttribute("bookList",service.bookList(ucode));
 		
 		
 

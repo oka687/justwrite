@@ -33,4 +33,18 @@
 
 </select>
 
+<select id="bookList" resultType="org.mk.domain.BookList">
+	select bookCode,bookName, usercode, count, dateDate
+		from 
+			(select * from chapcount AS a
+			inner join
+			(select bookCode as bcode,bookName,userCode,dateDate from bookinfo) AS b
+		on a.bookCode = bcode where usercode = #{ucode}) AS cnt
+</select>
+
+<select id="chapCount" resultType="int">
+	select count from chapcount where bookCode = #{bookCode}
+</select>
+
+
 </mapper>

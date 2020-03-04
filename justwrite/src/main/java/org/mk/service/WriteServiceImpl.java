@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
+import org.mk.domain.BookList;
 import org.mk.domain.UserInfo;
 import org.mk.mapper.WriteMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +71,20 @@ public class WriteServiceImpl implements WriteService {
 	public BookContent editNovel(String bookCode, String chapName) {
 		
 		return mapper.editNovel(bookCode,chapName);
+	}
+
+
+	@Override
+	public List<BookList> bookList(String ucode) {
+		
+		return mapper.bookList(ucode);
+	}
+
+
+	@Override
+	public int chapCount(String bookCode) {
+
+		return mapper.chapCount(bookCode);
 	}
 
 

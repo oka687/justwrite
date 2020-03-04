@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
+import org.mk.domain.BookList;
 import org.mk.domain.Login;
 import org.mk.domain.UserInfo;
 
@@ -13,15 +14,11 @@ public interface WriteMapper {
 	
 
 	
-//	public BookInfo read(String bookinfo);
+
 	
 	public List<BookInfo> getList(String ucode);
 	
-//	public void insert(BookInfo book);
-	
-//	public int delete(String bookCode);
-//	
-//	public int update(BookInfo book);
+
 	
 	public void userRegist(UserInfo info);
 	
@@ -37,10 +34,8 @@ public interface WriteMapper {
 	
 	public BookContent editNovel(@Param("bookCode")String bookCode,@Param("chapName")String chapName);
 	
+	public List<BookList> bookList(String ucode);
 
-	
-//	
-//	public List<BoardVO> getListWithPaging(Criteria cri);
-	
+	public int chapCount(@Param("bookCode")String bookCode);
 	
 }

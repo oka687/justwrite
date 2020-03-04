@@ -3,6 +3,7 @@ import java.util.List;
 
 import org.mk.domain.BookContent;
 import org.mk.domain.BookInfo;
+import org.mk.domain.BookList;
 import org.mk.domain.UserInfo;
 
 public interface WriteService {
@@ -27,7 +28,9 @@ public interface WriteService {
 		
 		public BookContent editNovel(String bookCode,String chapName);
 		
-	
+		public List<BookList> bookList(String ucode);
+		
+		public int chapCount(String bookCode);
 		
 
 }

@@ -30,7 +30,7 @@
                         </div>
                             <div class="title_area">
                                         <div class="title_line">
-                           <c:out value="${bookinfo.bookName }" /> [<span id="chapCount">0</span>]
+                           <c:out value="${bookinfo.bookName }" /> [<span id="chapCount"><c:out value="${counter}" /></span>]
                             <span class="updateDate" style="float: right;">
                                 <c:out value="${bookinfo.dateDate }" />
                             </span>
@@ -104,17 +104,9 @@
 $(document).ready(function(){
     info();
     infoHide();
-    chpaCount();
+   
     deleteChap();
 })
-function chpaCount(){
-	
-	  var chapNo = document.getElementById('forCount');
-	  var chapNumber = chapNo.childElementCount;
-
-		var count = $("#chapCount").text(chapNumber);
-		
-}
 
 
 

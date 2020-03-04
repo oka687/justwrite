@@ -29,7 +29,7 @@
 	        <ul class="bookList">
 	                <li class="lno" style="width: 10%; text-align: center;">${status.count}</li>
 	                <li class="bname" style="width: 56%;">${getList.bookName }</li>
-	                <li class="chapCount" style="width: 8%; text-align: center;">10</li>
+	                <li class="chapCount" style="width: 8%; text-align: center;">${getList.count }</li>
 	                <li class="regDate" style="width: 14%; text-align: center;">${getList.dateDate}</li>
 	                <li class="dbutton" style="width: 8%;text-align: center; cursor: pointer;">X</li>
 	        </ul>
