@@ -113,7 +113,7 @@ public class WriteController {
 		
 	
 		
-		model.addAttribute("bookCount", service.takeBookCount(ucode).getBookCount());
+		model.addAttribute("bookCount", service.takeBookCount(ucode));
 		
 		
 		model.addAttribute("bookList",service.getList(ucode));

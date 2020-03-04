@@ -30,7 +30,7 @@ public interface WriteMapper {
 	
 	public List<BookContent> getChap(String bookCode);
 
-	public UserInfo takeBookCount(String ucode);
+	public int takeBookCount(String ucode);
 	
 	public BookContent editNovel(@Param("bookCode")String bookCode,@Param("chapName")String chapName);
 	

@@ -12,9 +12,9 @@
 	call user_register(#{id},#{pw},#{nickName},#{eMail})
 </insert>
 
-<select id="takeBookCount" resultType="org.mk.domain.UserInfo">
+<select id="takeBookCount" resultType="int">
 
-	select bookcount from userinfo where usercode = #{ucode}
+	select count(*) from bookinfo where usercode = #{ucode}
 </select>
 
 <select id="getList" resultType = "org.mk.domain.BookInfo">

@@ -20,7 +20,7 @@ public interface WriteService {
 		
 		public List<BookContent> getChap(String bookCode);
 	
-		public UserInfo takeBookCount(String ucode);
+		public int takeBookCount(String ucode);
 //		
 		public List<BookInfo> getList(String ucode);
 //		

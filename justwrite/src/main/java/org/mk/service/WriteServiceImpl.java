@@ -39,7 +39,7 @@ public class WriteServiceImpl implements WriteService {
 
 
 	@Override
-	public UserInfo takeBookCount(String ucode) {
+	public int takeBookCount(String ucode) {
 		
 		return mapper.takeBookCount(ucode);
 	}
