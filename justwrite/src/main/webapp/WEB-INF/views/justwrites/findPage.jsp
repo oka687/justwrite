@@ -83,7 +83,7 @@
                                 <div class="bookInfo">
         							<div class="notBox">
         								<a href="http://localhost:8080/justwrites/check?bookName=<c:out value='${bookinfo.bookName }' />">
-        									<h3 style="position: relative;left: 37%;margin-top: 15px;">작성</h3>
+        									<h3 style="position: relative;left: 35.5%;margin-top: 11px;">작성</h3>
         								</a>
         							</div>
                                 </div>    
@@ -127,7 +127,9 @@ function deleteChap(){
 			    dataType:'text',
 			    contentType : "application/json; charset=utf-8",
 			    data:JSON.stringify(
-			    		  {"bookName" : bookName}
+			    		  {"bookName" : bookName,
+			    			"chapName":chapName  
+			    		  }
 			    		), 
 					    success: function(data) {
 					    	

@@ -245,16 +245,21 @@ public class WriteRequestController {
 	public String deleteNovel(@SessionAttribute("ucode") String ucode, @RequestBody BookContent deleteChap) {
 		System.out.println("삭제중");
 		String bookCode = deleteChap.getBookName()+ucode;
-		System.out.println(bookCode);
+		
+		
+		
 		
 		String chapName = deleteChap.getChapName();
 		
+		System.out.println("=======================");
+		System.out.println(bookCode);
+		System.out.println(deleteChap);
 		service.deleteChap(bookCode,chapName);
 		
 		int bookCount = service.chapCount(bookCode);
-		
+		System.out.println("픽스카운트");
 		service.fixCount(bookCode,bookCount);
-		
+		System.out.println("픽스카운트지나감");
 		return "success";
 	}
 	
