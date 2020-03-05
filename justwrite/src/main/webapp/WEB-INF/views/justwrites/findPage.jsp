@@ -39,7 +39,10 @@
                                 <c:out value='${bookinfo.bookEx.replaceAll("\\\<.*?\\\>","")}' />
                             </div>
                          </div>
-     
+     				
+     					<c:if test="${chap ne 'null'}">
+     						<a href="http://localhost:8080/justwrites/check?bookName=<c:out value='${bookinfo.bookName }' />"><div class="writeButton">글쓰기</div></a>
+     					</c:if>
                     </div>
 
 		

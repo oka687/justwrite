@@ -109,11 +109,29 @@ border: 0;
 .chapList{
     width: 100%;
     height: 100%;
+    margin-top: 3% !important;
     margin: auto;
     padding-top: 5px;
     padding-bottom: 5px;
 
 }
+
+.writeButton{
+	width:100%; 
+	height:15%;
+	text-align:center;
+	cursor: pointer;
+	font-weight:bold;
+	font-size:18px;
+}
+
+.writeButton:hover{
+	background-color: rgb(245, 245, 245);
+	
+	
+	
+}
+
 
 .chapBox{
     width: 100%;
@@ -242,6 +260,7 @@ border: 0;
         -khtml-user-select: none;
         -webkit-user-select: none;
         user-select: none;
+        text-decoration:none;
     }
     
     
