@@ -276,7 +276,7 @@ public class WriteRequestController {
 
 		service.deleteBookInfo(ucode,bookCode);
 		service.deleteBookChap(bookCode);
-		
+		service.deleteChapCount(bookCode);
 		return "success";
 	}
 	

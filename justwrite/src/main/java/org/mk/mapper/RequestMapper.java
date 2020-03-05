@@ -46,4 +46,6 @@ public interface RequestMapper {
 	public void deleteBookInfo(@Param("ucode")String ucode, @Param("bookCode")String bookCode);
 	
 	public void deleteBookChap(String bookCode);
+	
+	public void deleteChapCount(String bookCode);
 }

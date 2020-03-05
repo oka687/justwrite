@@ -152,6 +152,13 @@ public class WriteRequestServiceImp implements WriteRequestService {
 		mapper.deleteBookChap(bookCode);
 		
 	}
+
+	@Override
+	public void deleteChapCount(String bookCode) {
+	
+		mapper.deleteChapCount(bookCode);
+		
+	}
 	
 	
 

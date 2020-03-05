@@ -47,4 +47,6 @@ public interface WriteRequestService {
 	
 	public void bookCode(String bookCode);
 	
+	public void deleteChapCount(String bookCode);
+	
 }

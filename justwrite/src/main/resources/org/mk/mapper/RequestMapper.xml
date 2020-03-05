@@ -86,4 +86,8 @@
 	delete from bookcontent where bookCode = #{bookCode}
 </delete>
 
+<delete id="deleteChapCount">
+	delete from chapcount where bookCode = #{bookCode}
+</delete>
+
 </mapper>
