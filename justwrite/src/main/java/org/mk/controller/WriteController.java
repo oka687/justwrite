@@ -181,19 +181,17 @@ public class WriteController {
 	@GetMapping("/bookList")
 	public void bookList(@SessionAttribute("ucode") String ucode,Model model) {
 		
-	
-	
-		
-		
-		
-		model.addAttribute("bookList",service.bookList(ucode));
-		
-		
 
 		
+		model.addAttribute("bookList",service.bookList(ucode));
+
 		
 	}
-	
+
+	@GetMapping("/outline")
+	public void outline() {
+		
+	}
 	
 
 }

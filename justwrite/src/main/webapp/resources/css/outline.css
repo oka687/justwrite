@@ -1,68 +1,123 @@
-.content_area{
-    width: 80%;
-    height: 92%;
-    float: right;
-   
+html, body{
+    padding : 0;
+    margin : 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.bookCage{
+    position: relative;
+    top: 15%;
+    }
+
+.lno img{
+    display: block;
+    margin-left: auto;
+    width: 43%;
+    }
+
+
+.listBar{
+
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    top:5%;
+    
 
 }
 
-.outline_box{
-    width: 80%;
-    height: 100%;
-    margin: auto;
+
+.bookList{
    
+    width: 70%;
+    height: 10%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #d8d6d6;
+
+}
+
+.bookList:hover{
+    background-color: #faf9f9;
+}
+
+
+
+.dir{
+
+    width: 70%;
+    height: 10%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+
+}
+.back{
+
+    width: 70%;
+    height: 10%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+
+}
+
+.backBar{
+    width: 2%;
+    margin-left: 4%;
+    padding: 5px;
     text-align: center;
 
 }
 
-.fix_title ,.title_box{
-    font-weight: bold;
-    font-size: 20px;
-}
-.outline_name{
-    text-align: left;
-    width: 100%;
-    height: 10%;
+
+.backBar:hover{
+    background-color: #e0dcdc;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-#outline_key{
-    width: 50%;
-    height: 80%;
-    font-size: 20px;
+.back:hover{
+    background-color: #f1eded;
 }
 
 
-.chap_num{
-    text-align: left;
-    width: 100%;
-    height: 10%;
+
+/* 공통부분 */
+
+    ul{
+
+    list-style:none;
+    padding-left:0px;
+  
 }
 
-#chap_key{
-    width: 20%;
-    height: 80%;
-    font-size: 15px;
+.bname:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-
-.outline_ex{
-    text-align: left;
+.listBar div{
+    text-align: center;
+    display : inline-block;
     
-    width: 100%;
-    height: 50%;
-
 }
 
-#outline_ex{
-
-    width: 100%;
-    height: 90%;
-    font-size: 15px;
-
+.bookList li{
+    display: inline-block;
+    height: 100%;
 }
 
-
-/* 하이퍼링크 파란색 없애는 기능 */
-a:link { color: red; text-decoration: none;}
-a:visited { color: white; text-decoration: none;}
-a:hover { color: white; text-decoration: none;}
+.dir li{
+    height: 100%;
+}

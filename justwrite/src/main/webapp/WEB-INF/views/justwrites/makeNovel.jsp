@@ -43,7 +43,7 @@
             </ul>
             <div class="button_area">
                 <button type="submit" id="submit_btn" class="submit_button">확인</button>
-                <button type="button" class="cancle_btn">취소</button>
+                <button type="button" id="cancelB" class="cancle_btn" onclick="cancelNovel()">취소</button>
             </div>
 
         </div>
@@ -59,6 +59,19 @@ $(document).ready(function(){
 	imgUpload();
 	
 })
+function cancelNovel(){
+	
+			if(confirm("페이지를 이동하시면 작성 중인 내용을 잃게 됩니다. 이동하시겠습니까?")){
+				 location.href = "http://localhost:8080/justwrites/firstPage";
+				
+			}else{
+				return false;
+			}
+
+}
+
+
+
 function checkFile(fileName, fileSize){
 	
 	var maxSize = 5242880; //5MB
